@@ -1,0 +1,198 @@
+---
+title: "Nina annotation addition 01222025"
+output: html_document
+date: "2025-01-22"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/nina_mgf_updated_01242025/negative ESI")
+```
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+LC_only <- read.csv("LC library only 01302025.csv", header = TRUE)
+
+library_only <- read.csv("spectral mgf only 01302025.csv", header= TRUE)
+
+md <- read.csv("GNPS_Drug_Library_Metadata_Drugs.csv", header= TRUE)
+
+analog_md <- read.csv("GNPS_Drug_Library_Metadata_Drug_Analogs.csv", header= TRUE)
+```
+
+## Frequency of quality of spectral hits 
+
+```{r}
+LC_only <- subset(LC_only, LibraryName != "CMMC-REFRAME-POSITIVE-LIBRARY.mgf")
+
+
+# Get the frequency table for the column "LibraryQualityString"
+LC_quality_freq <- table(LC_only$LibraryQualityString)
+
+# View the frequency table
+print(LC_quality_freq)
+```
+
+```{r}
+# Get the frequency table for the column "LibraryQualityString"
+library_only_quality_freq <- table(library_only$LibraryQualityString)
+
+# View the frequency table
+print(library_only_quality_freq)
+```
+
+### Remove insilico spectral hits
+
+```{r}
+LC_only <- subset(LC_only, LibraryQualityString != "Insilico")
+
+library_only <- subset(library_only, LibraryQualityString != "Insilico")
+
+```
+
+## What spectral libraries did these come from?
+
+```{r}
+
+# Get the frequency table for the column "LibraryQualityString"
+LC_name_freq <- table(LC_only$LibraryName)
+
+LC_name_freq <- as.data.frame(LC_name_freq)
+colnames(LC_name_freq) <- c("LibraryName", "Frequency")
+
+# View the frequency table
+print(LC_name_freq)
+```
+
+
+```{r}
+# Get the frequency table for the column "LibraryQualityString"
+Lib_only_name_freq <- table(library_only$LibraryName)
+
+Lib_only_name_freq <- as.data.frame(Lib_only_name_freq)
+colnames(Lib_only_name_freq) <- c("LibraryName", "Frequency")
+
+# View the frequency table
+print(Lib_only_name_freq)
+```
+
+## Merge pharmaceutical metadata by nina metadata
+
+```{r}
+merged_LC_only_annotations <- merge(LC_only, md, by.x = "SpectrumID", by.y = "gnps_libid")
+
+merged_LC_only_analog <- merge(LC_only, analog_md, by.x = "SpectrumID", by.y = "analog_libid")
+
+
+```
+
+```{r}
+merged_library_only_annotations <- merge(library_only, md, by.x = "SpectrumID", by.y = "gnps_libid")
+
+
+merged_library_only_analog <- merge(library_only, analog_md, by.x = "SpectrumID", by.y = "analog_libid")
+
+```
+
+
+## How many different compounds are listed in the annotation list?
+
+```{r}
+# Get the frequency table for the column "LibraryQualityString"
+LC_only_compound_list <- table(LC_only$Compound_Name)
+
+LC_only_compound_list <- as.data.frame(LC_only_compound_list)
+colnames(LC_only_compound_list) <- c("CompoundName", "Frequency")
+
+# View the frequency table
+print(LC_only_compound_list)
+```
+
+```{r}
+# Get the frequency table for the column "LibraryQualityString"
+Library_only_compound_list <- table(library_only$Compound_Name)
+
+Library_only_compound_list <- as.data.frame(Library_only_compound_list)
+colnames(Library_only_compound_list) <- c("CompoundName", "Frequency")
+
+# View the frequency table
+print(Library_only_compound_list)
+```
+
+```{r}
+write.csv(merged_library_only_annotations, "merged_library_only_annotations.csv")
+
+write.csv(merged_library_only_analog, "merged_library_only_analog.csv")
+
+write.csv(merged_LC_only_annotations, "merged_LC_only_annotation.csv")
+
+write.csv(merged_LC_only_analog, "merged_LC_only_analog.csv")
+
+
+```
+
+```{r}
+# Get the frequency table for the column "LibraryQualityString"
+lib_merged_compound_list <- table(merged_library_only_annotations$name_compound)
+
+lib_merged_compound_list <- as.data.frame(lib_merged_compound_list)
+colnames(lib_merged_compound_list) <- c("CompoundName", "Frequency")
+
+# View the frequency table
+print(lib_merged_compound_list)
+
+##29  annotations compounds
+
+lib_merged_compound_list_analog <- table(merged_library_only_analog$name_analog)
+
+lib_merged_compound_list_analog  <- as.data.frame(lib_merged_compound_list_analog )
+colnames(lib_merged_compound_list) <- c("CompoundName", "Frequency")
+
+# View the frequency table
+print(lib_merged_compound_list_analog )
+
+## 3 analog annotations 
+
+
+```
+
+```{r}
+# Get the frequency table for the column "LibraryQualityString"
+merged_LC_only_annotation_list <- table(merged_LC_only_annotations$name_compound)
+
+merged_LC_only_annotation_list <- as.data.frame(merged_LC_only_annotation_list)
+colnames(merged_LC_only_annotation_list) <- c("CompoundName", "Frequency")
+
+# View the frequency table
+print(merged_LC_only_annotation_list)
+
+## 10 LC only annotations
+
+merged_LC_only_analog_list <- table(merged_LC_only_analog$name_analog)
+
+merged_LC_only_analog_list <- as.data.frame(merged_LC_only_analog_list)
+colnames(merged_LC_only_analog_list) <- c("CompoundName", "Frequency")
+
+# View the frequency table
+print(merged_LC_only_analog_list)
+
+## 1 analog annotations LC only
+```
+
+```{r}
+write.csv(merged_LC_only_analog_list, "merged_LC_only_analog_list.csv")
+
+write.csv(merged_LC_only_annotation_list, "merged_LC_only_anotation_list.csv")
+
+write.csv(lib_merged_compound_list, "lib_merged_compound_list.csv")
+
+write.csv(lib_merged_compound_list_analog, "lib_merged_compound_list_analog.csv")
+
+```
+
