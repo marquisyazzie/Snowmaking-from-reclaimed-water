@@ -1,0 +1,111 @@
+---
+title: "snowfall_accumulation_figure_10132024"
+output: html_document
+date: "2024-10-13"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/snow sampling time figure 10132024")
+```
+
+```{r}
+library(ggplot2)
+library(stringr)
+library(data.table)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(reshape)     
+library(gplots)
+library(pheatmap)
+library(heatmap3)
+library(magrittr) 
+library(tibble) 
+library(RColorBrewer)
+library(paletteer)
+library(clr)
+library(tidyverse) #used for data science. The eight core packages inside this library are: ggplot2 (data visualisation), dplyr (data manipulation), tidyr, readr, purrr, tibble, stringr, and forcats
+library(KODAMA) # to use the normalisation function
+library(ggrepel) #mainly used to repel overlapping text labels in ggplots
+library(vegan) #popular library for analysing ecological diversity and for multivariate analysis of community data. Here, we use it for PCoA
+library(svglite) #to save the plots in support vector graphics (svg) format
+library(factoextra) #for extracting and visualizing outputs of multivariate analyses such as PCA, k-means
+library(ggsci) #provides color palettes for ggplot2 that can be used for scientific journals
+library(matrixStats) #contains highly optimized functions to perform statistics on matrix data
+library(cowplot) #efficient functions to arrange several plots
+```
+
+```{r}
+accumulation <- read.csv("snowfall_accumulation_data_10132024.csv", header=T, check.names=F)
+```
+
+```{r}
+accumulation$Date <- as.Date(accumulation$Date, format = "%m/%d/%Y")
+
+accumulation_1 <- accumulation %>%
+  filter(Date < as.Date("2022-10-01"))
+
+accumulation_2 <- accumulation %>%
+  filter( Date > as.Date("2022-11-29"))
+```
+
+
+```{r}
+sample_point_date_1 <- accumulation_1 %>%
+  filter(Data_Type == "Sample_point") %>%
+  pull(Date)
+
+accumulation_plot <- ggplot(accumulation_1, aes(x = Date, y = `Day accumulation (inches)`)) + 
+  geom_point(size =2)  +
+  labs(x = "",  
+       y = "Snowfall Day Accumulation (inches)") +
+  ggtitle("") +
+theme_classic()+
+   theme(axis.title.x = element_text(family = "sans", size = 16, hjust = 0.5),  
+        axis.title.y = element_text(family = "sans", size = 16, hjust = 0.5),  
+        axis.text.x = element_text(family = "sans", size = 16, color = "black", angle=90), 
+        axis.text.y = element_text(family = "sans", size = 16, color= "black"),
+        axis.line=element_line(size =1),
+        axis.ticks=element_line(size=1), 
+        axis.ticks.length=unit(.25, "cm"),
+        legend.text=element_text(size=14,family="sans"))+
+  scale_x_date(date_labels = "%b-%Y", date_breaks = "1 month")+
+  geom_vline(xintercept = as.numeric(sample_point_date_1), color = "red", linetype = "dashed")
+accumulation_plot
+
+ggsave(file="Accumulation_plot_2022.svg", plot=accumulation_plot, width =9, height = 7 )
+```
+
+```{r}
+sample_point_date_2 <- accumulation_2 %>%
+  filter(Data_Type == "Sample_point") %>%
+  pull(Date)
+
+accumulation_plot_2 <- ggplot(accumulation_2, aes(x = Date, y = `Day accumulation (inches)`)) + 
+  geom_point(size =2)  +
+  labs(x = "",  
+       y = "Snowfall Day Accumulation (inch)") +
+  ggtitle("") +
+theme_classic()+
+   theme(axis.title.x = element_text(family = "sans", size = 16, hjust = 0.5),  
+        axis.title.y = element_text(family = "sans", size = 16, hjust = 0.5),  
+        axis.text.x = element_text(family = "sans", size = 16, color = "black", angle=90), 
+        axis.text.y = element_text(family = "sans", size = 16, color= "black"),
+        axis.line=element_line(size =1),
+        axis.ticks=element_line(size=1), 
+        axis.ticks.length=unit(.25, "cm"),
+        legend.text=element_text(size=14,family="sans"))+
+  scale_x_date(date_labels = "%b-%Y", date_breaks = "1 month")+
+  geom_vline(xintercept = as.numeric(sample_point_date_2), color = "red", linetype = "dashed")
+accumulation_plot_2
+
+ggsave(file="Accumulation_plot_Dec_2022_to_April2023.svg", plot=accumulation_plot_2, width =9, height = 7 )
+
+```
+
