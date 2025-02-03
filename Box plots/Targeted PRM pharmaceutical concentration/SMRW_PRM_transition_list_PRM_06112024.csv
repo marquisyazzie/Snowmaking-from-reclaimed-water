@@ -1,0 +1,7 @@
+Molecule List Name,Precursor Name,Precursor m/z,Precursor Adduct,Precursor Charge,Explicit Collision Energy,Product m/z,Product Charge,Label
+MY,Carbamazepine,237.1022,[M+H],1,35,194.096,1,
+MY,Fexofenadine,502.2952,[M+H],1,35,171.1168,1,
+MY,Flecainide,415.1451,[M+H],1,35,398.1183,1,
+MY,Lamotrigine,256.0151,[M+H],1,35,210.9825,1,
+MY,Fluconazole,307.1113,[M+H],1,35,220.068,1,
+MY,Sulfamethizole-d4,275.0574,[M+H],1,35,160.0367,1,

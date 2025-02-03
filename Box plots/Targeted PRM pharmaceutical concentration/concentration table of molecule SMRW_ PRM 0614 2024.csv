@@ -1,0 +1,91 @@
+Snow Type,Date sample collected ,Molecule ,Replicate,Concentration (ng/L)
+High Snowmaking,March 30 2022,Carbamazepine,1,0
+High Snowmaking,March 30 2022,Carbamazepine,2,0.029
+High Snowmaking,March 30 2022,Carbamazepine,3,0
+High Snowmaking,December 23 2022,Carbamazepine,1,1.82
+High Snowmaking,December 23 2022,Carbamazepine,2,6.36
+High Snowmaking,December 23 2022,Carbamazepine,3,6.1
+Low Snowmaking,April 29 2023 ,Carbamazepine,1,0.02
+Low Snowmaking,April 29 2023 ,Carbamazepine,2,0
+Low Snowmaking,April 29 2023 ,Carbamazepine,3,0.056
+Natural Snowfall,March 30 2022,Carbamazepine,1,0.065
+Natural Snowfall,March 30 2022,Carbamazepine,2,0
+Natural Snowfall,March 30 2022,Carbamazepine,3,0.096
+Natural Snowfall,April 29 2023 ,Carbamazepine,1,0.13
+Natural Snowfall,April 29 2023 ,Carbamazepine,2,0.026
+Natural Snowfall,April 29 2023 ,Carbamazepine,3,0.12
+Extraction Blank,None,Carbamazepine,1,0.146
+Extraction Blank,None,Carbamazepine,2,0
+Extraction Blank,None,Carbamazepine,3,0
+High Snowmaking,March 30 2022,Fexofenadine,1,0
+High Snowmaking,March 30 2022,Fexofenadine,2,0.92
+High Snowmaking,March 30 2022,Fexofenadine,3,0.28
+High Snowmaking,December 23 2022,Fexofenadine,1,5.12
+High Snowmaking,December 23 2022,Fexofenadine,2,24.2
+High Snowmaking,December 23 2022,Fexofenadine,3,18
+Low Snowmaking,April 29 2023 ,Fexofenadine,1,0
+Low Snowmaking,April 29 2023 ,Fexofenadine,2,0
+Low Snowmaking,April 29 2023 ,Fexofenadine,3,2.11
+Natural Snowfall,March 30 2022,Fexofenadine,1,0
+Natural Snowfall,March 30 2022,Fexofenadine,2,0
+Natural Snowfall,March 30 2022,Fexofenadine,3,0
+Natural Snowfall,April 29 2023 ,Fexofenadine,1,0
+Natural Snowfall,April 29 2023 ,Fexofenadine,2,0.27
+Natural Snowfall,April 29 2023 ,Fexofenadine,3,0
+Extraction Blank,None,Fexofenadine,1,0
+Extraction Blank,None,Fexofenadine,2,0
+Extraction Blank,None,Fexofenadine,3,0
+High Snowmaking,March 30 2022,Flecainide,1,0.25
+High Snowmaking,March 30 2022,Flecainide,2,0.9
+High Snowmaking,March 30 2022,Flecainide,3,0.51
+High Snowmaking,December 23 2022,Flecainide,1,14.2
+High Snowmaking,December 23 2022,Flecainide,2,67.8
+High Snowmaking,December 23 2022,Flecainide,3,16.7
+Low Snowmaking,April 29 2023 ,Flecainide,1,0.044
+Low Snowmaking,April 29 2023 ,Flecainide,2,0
+Low Snowmaking,April 29 2023 ,Flecainide,3,12.6
+Natural Snowfall,March 30 2022,Flecainide,1,0
+Natural Snowfall,March 30 2022,Flecainide,2,0
+Natural Snowfall,March 30 2022,Flecainide,3,0
+Natural Snowfall,April 29 2023 ,Flecainide,1,0
+Natural Snowfall,April 29 2023 ,Flecainide,2,0.03
+Natural Snowfall,April 29 2023 ,Flecainide,3,0
+Extraction Blank,None,Flecainide,1,0
+Extraction Blank,None,Flecainide,2,0
+Extraction Blank,None,Flecainide,3,0
+High Snowmaking,March 30 2022,Fluconazole,1,0.7
+High Snowmaking,March 30 2022,Fluconazole,2,0.59
+High Snowmaking,March 30 2022,Fluconazole,3,0.54
+High Snowmaking,December 23 2022,Fluconazole,1,14.4
+High Snowmaking,December 23 2022,Fluconazole,2,30.6
+High Snowmaking,December 23 2022,Fluconazole,3,43.7
+Low Snowmaking,April 29 2023 ,Fluconazole,1,0
+Low Snowmaking,April 29 2023 ,Fluconazole,2,0
+Low Snowmaking,April 29 2023 ,Fluconazole,3,0.68
+Natural Snowfall,March 30 2022,Fluconazole,1,0
+Natural Snowfall,March 30 2022,Fluconazole,2,0
+Natural Snowfall,March 30 2022,Fluconazole,3,0
+Natural Snowfall,April 29 2023 ,Fluconazole,1,0
+Natural Snowfall,April 29 2023 ,Fluconazole,2,0
+Natural Snowfall,April 29 2023 ,Fluconazole,3,0
+Extraction Blank,None,Fluconazole,1,0
+Extraction Blank,None,Fluconazole,2,0
+Extraction Blank,None,Fluconazole,3,0
+High Snowmaking,March 30 2022,Lamotrigine,1,0.65
+High Snowmaking,March 30 2022,Lamotrigine,2,2.63
+High Snowmaking,March 30 2022,Lamotrigine,3,2.86
+High Snowmaking,December 23 2022,Lamotrigine,1,4.47
+High Snowmaking,December 23 2022,Lamotrigine,2,14
+High Snowmaking,December 23 2022,Lamotrigine,3,19.4
+Low Snowmaking,April 29 2023 ,Lamotrigine,1,0
+Low Snowmaking,April 29 2023 ,Lamotrigine,2,0
+Low Snowmaking,April 29 2023 ,Lamotrigine,3,0
+Natural Snowfall,March 30 2022,Lamotrigine,1,0
+Natural Snowfall,March 30 2022,Lamotrigine,2,0
+Natural Snowfall,March 30 2022,Lamotrigine,3,0
+Natural Snowfall,April 29 2023 ,Lamotrigine,1,0
+Natural Snowfall,April 29 2023 ,Lamotrigine,2,0
+Natural Snowfall,April 29 2023 ,Lamotrigine,3,0
+Extraction Blank,None,Lamotrigine,1,0
+Extraction Blank,None,Lamotrigine,2,0
+Extraction Blank,None,Lamotrigine,3,0
