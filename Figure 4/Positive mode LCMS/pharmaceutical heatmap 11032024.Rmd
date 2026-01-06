@@ -1,0 +1,180 @@
+---
+title: "pharmceutical heatmap 11 3 2024"
+author: "Marquis Y"
+date: "2024-11-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/pharmaceutical_heatmap_11032024")
+```
+
+```{r}
+library(ggplot2)
+library(stringr)
+library(data.table)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(reshape)     
+library(gplots)
+library(pheatmap)
+library(heatmap3)
+library(magrittr) 
+library(tibble) 
+library(RColorBrewer)
+library(paletteer)
+library(clr)
+library(tidyverse) #used for data science. The eight core packages inside this library are: ggplot2 (data visualisation), dplyr (data manipulation), tidyr, readr, purrr, tibble, stringr, and forcats
+library(KODAMA) # to use the normalisation function
+library(ggrepel) #mainly used to repel overlapping text labels in ggplots
+library(vegan) #popular library for analysing ecological diversity and for multivariate analysis of community data. Here, we use it for PCoA
+library(svglite) #to save the plots in support vector graphics (svg) format
+library(factoextra) #for extracting and visualizing outputs of multivariate analyses such as PCA, k-means
+library(ggsci) #provides color palettes for ggplot2 that can be used for scientific journals
+library(matrixStats) #contains highly optimized functions to perform statistics on matrix data
+library(cowplot) #efficient functions to arrange several plots
+```
+
+```{r}
+clustered <- read.csv("average_technical_replicates_mzmine_3_10292023_pos_CLR_Scaled_positive.csv", header=T, check.names=F)
+```
+
+
+```{r}
+
+colnames(clustered)[1] <- "temp_row_name"  # Assign a temporary name to the first column
+rownames(clustered) <- clustered$temp_row_name    # Set the first column as row names
+clustered_1 <- as.data.frame(clustered)
+clustered_1 <- clustered_1[, -1] 
+
+clustered_1 <- clustered_1[rownames(clustered_1) != "pooled_QC_1.mzML", ]
+
+
+```
+
+
+
+```{r}
+clustered_4 <- clustered_1 %>%
+   select(starts_with("5764_"), starts_with("10582_"), starts_with("9430_"), starts_with("7507_"), starts_with("12950_"), starts_with("7474_"), starts_with("7667_"), starts_with("2030_"), starts_with("8780_"), starts_with("13028_"), starts_with("8723_"), starts_with("33896_"), starts_with("7369_"), starts_with("9461_"), starts_with("2581_"), starts_with("34139_"), starts_with("20927_"), starts_with("4014_"), starts_with("8372_"), starts_with("42703_"), starts_with("5974_"), starts_with("1202_"),starts_with("8662_"),starts_with("7181_"), starts_with("19959_"),starts_with("12688_"),starts_with("25474_"), starts_with("15820_"), starts_with("3159_"), starts_with("5174_"),starts_with("29788_"),starts_with("18897_"), starts_with("3792_"), starts_with("5909_"),starts_with("2495_"),starts_with("10110_"),starts_with("5299_"),starts_with("34737_"),starts_with("3749_"),starts_with("3233_"),starts_with("27678_"),starts_with("14477_"),starts_with("21334_"),starts_with("23292_"),starts_with("18144_"),starts_with("20451_"),starts_with("15425_"),starts_with("16468_"),starts_with("13989_"))
+```
+
+```{r}
+rownames(clustered_4)[rownames(clustered_4) == "A1.mzML"] <- "High Snowmaking March 2022 1"
+rownames(clustered_4)[rownames(clustered_4) == "A2.mzML"] <- "High Snowmaking March 2022 2"
+rownames(clustered_4)[rownames(clustered_4) == "A3.mzML"] <- "High Snowmaking March 2022 3"
+rownames(clustered_4)[rownames(clustered_4) == "A4.mzML"] <- "High Snowmaking December 2022 1"
+rownames(clustered_4)[rownames(clustered_4) == "A5.mzML"] <- "High Snowmaking December 2022 2"
+rownames(clustered_4)[rownames(clustered_4) == "A6.mzML"] <- "High Snowmaking December 2022 3"
+rownames(clustered_4)[rownames(clustered_4) == "A7.mzML"] <- "Low Snowmaking April 2023 1"
+rownames(clustered_4)[rownames(clustered_4) == "A8.mzML"] <- "Low Snowmaking April 2023 2"
+rownames(clustered_4)[rownames(clustered_4) == "A9.mzML"] <- "Low Snowmaking April 2023 3"
+rownames(clustered_4)[rownames(clustered_4) == "A10.mzML"] <- "Natural Snowfall March 2022 1"
+rownames(clustered_4)[rownames(clustered_4) == "A11.mzML"] <- "Natural Snowfall March 2022 2"
+rownames(clustered_4)[rownames(clustered_4) == "A12.mzML"] <- "Natural Snowfall March 2022 3"
+rownames(clustered_4)[rownames(clustered_4) == "A13.mzML"] <- "Natural Snowfall April 2023 1"
+rownames(clustered_4)[rownames(clustered_4) == "A14.mzML"] <- "Natural Snowfall April 2023 2"
+rownames(clustered_4)[rownames(clustered_4) == "A15.mzML"] <- "Natural Snowfall April 2023 3"
+```
+
+```{r}
+clustered_4 <- clustered_4 %>%
+   rename_with(~ str_replace(., "^5764_.*", "Lamotrigine")) %>%
+  rename_with(~ str_replace(., "^10582_.*", "Flecainide")) %>%
+  rename_with(~ str_replace(., "^7507_.*", "Fluconazole")) %>%
+    rename_with(~ str_replace(., "^9430_.*", "Carbamazepine")) %>%
+  rename_with(~ str_replace(., "^12950_.*", "Fexofenadine")) %>%
+  rename_with(~ str_replace(., "^7474_.*", "N-desmethylvenlafaxine")) %>%
+  rename_with(~ str_replace(., "^7667_.*", "Venlafaxine")) %>%
+  rename_with(~ str_replace(., "^2030_.*", "Atenolol")) %>%
+  rename_with(~ str_replace(., "^8780_.*", "Verapamil metabolite")) %>%
+  rename_with(~ str_replace(., "^13028_.*", "Telmisartan")) %>%
+  rename_with(~ str_replace(., "^8723_.*", "Cianidanol")) %>%
+  rename_with(~ str_replace(., "^33896_.*", "Docusate")) %>%
+  rename_with(~ str_replace(., "^5974_.*", "Metropolol")) %>%
+  rename_with(~ str_replace(., "^7369_.*", "Azithromycin")) %>%
+  rename_with(~ str_replace(., "^9461_.*", "Quercetin")) %>%
+  rename_with(~ str_replace(., "^2581_.*", "Antazoline")) %>%
+  rename_with(~ str_replace(., "^34139_.*", "Acarbose")) %>%
+  rename_with(~ str_replace(., "^20927_.*", "Formestane")) %>%
+  rename_with(~ str_replace(., "^5299_.*", "Diphenyl guanidine")) %>%
+  rename_with(~ str_replace(., "^4014_.*", "Metropolol acid metabolite")) %>%
+  rename_with(~ str_replace(., "^8372_.*", "Azacyclonol"))%>%
+  rename_with(~ str_replace(., "^42703_.*", "Sitosterol"))%>%
+  rename_with(~ str_replace(., "^5947_.*", "Metropolol"))%>%
+  rename_with(~ str_replace(., "^15820_.*", "Cyclopentolate"))%>%
+  rename_with(~ str_replace(., "^3159_.*", "Metronidazole"))%>%
+  rename_with(~ str_replace(., "^5174_.*", "Caffeine"))%>%
+  rename_with(~ str_replace(., "^29788_.*", "Framycetin"))%>%
+  rename_with(~ str_replace(., "^18897_.*", "Sclareolide"))%>%
+  rename_with(~ str_replace(., "^3792_.*", "Theophylline"))%>%
+  rename_with(~ str_replace(., "^5909_.*", "Isoeugenol"))%>%
+  rename_with(~ str_replace(., "2495_.*", "Dexpanthenol"))%>%
+  rename_with(~ str_replace(., "^10110_.*", "Perillyl alcohol"))%>%
+  rename_with(~ str_replace(., "^34737_.*", "Acarbose analog"))%>%
+  rename_with(~ str_replace(., "^3749_.*", "Azithromycin analog "))%>%
+  rename_with(~ str_replace(., "^3233_.*", "Bisoprolol analog"))%>%
+  rename_with(~ str_replace(., "^27678_.*", "Oxandrolone analog"))%>%
+  rename_with(~ str_replace(., "^14477_.*", "Rimantadine analog"))%>%
+  rename_with(~ str_replace(., "^21334_.*", "Exemestane analog"))%>%
+  rename_with(~ str_replace(., "^23292_.*", "Dydrogesterone analog"))%>%
+  rename_with(~ str_replace(., "^18144_.*", "Enzacamene analog 1"))%>%
+  rename_with(~ str_replace(., "^20451_.*", "Enzacamene analog 2"))%>%
+  rename_with(~ str_replace(., "^15425_.*", "Enzacamene analog 3"))%>%
+  rename_with(~ str_replace(., "^16468_.*", "Methyltestosterone analog 1"))%>%
+  rename_with(~ str_replace(., "^13989_.*", "Methyltestosterone analog 2"))%>%
+  rename_with(~ str_replace(., "^1202_.*", "Adenosine"))%>%
+  rename_with(~ str_replace(., "^8662_.*", "Azelaic acid"))%>%
+  rename_with(~ str_replace(., "^7181_.*", "Tyrosine"))%>%
+  rename_with(~ str_replace(., "^19959_.*", "Ursodiol"))%>%
+  rename_with(~ str_replace(., "^12688_.*", "Hydrocortisone"))%>%
+  rename_with(~ str_replace(., "^25474_.*", "DGLA"))
+
+```
+
+
+```{r}
+clustered_4_matrix <- as.matrix(clustered_4)
+clustered_4_matrix <- t(clustered_4_matrix)
+dim(clustered_4_matrix)
+
+par(mar = c(9, 9, 9, 9))  # Increase margins as needed
+svg("heatmap_plot_with_analogs.svg", width = 10, height = 10)  # Adjust width and height as needed
+heatmap.2(clustered_4_matrix, 
+          scale = "row",        # Scale columns as in your example
+          col = bluered(100),   # Choose a color palette, e.g., blue to red with 100 shades
+          trace = "none",       # Remove trace lines for a cleaner look
+          key = TRUE,           # Add color legend (color key)
+          key.title = "Legend", # Title for the legend
+          key.xlab = "Value",   # X-axis label for the legend
+          dendrogram = "both",  # Display both row and column dendrograms
+          density.info = "none",
+          Rowv = TRUE, 
+          Colv = TRUE, 
+margins = c(10, 10), 
+lhei = c(1, 8),
+lwid = c(1, 4),
+          cexRow = 2,   # Increase row label size
+          cexCol = 2)
+dev.off()
+
+```
+```{r}
+library(pheatmap)
+
+svg("heatmap_plot_with_analogs_11192025.svg", width = 8, height = 10)  # Adjust width and height as needed
+pheatmap(clustered_4_matrix, 
+         scale = "row", 
+         fontsize_row = 12, 
+         fontsize_col = 12)
+dev.off()
+
+
+```
+
