@@ -1,0 +1,289 @@
+Sample_Name,Replicate,Sample Type,Explicit Analyte Concentration,Accuracy,Calculated_Concentration,Retention Time,Molecule_Name,Total_Area,Standard Type,Normalization Method,Transition,Total Area Normalized,Normalized_Area,Exclude From Calibration
+0.1_ppb_calibrant,0_point_1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.1,113.50%,1.13E-01,5.54,Carbamazepine,70523,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,1.72%,1.72E-02,FALSE
+0.5_ppb_calibrant,0_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.5,98.30%,4.91E-01,5.5,Carbamazepine,378148,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,8.31%,9.94E-02,FALSE
+1ppb_calibrant,1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.98,97%,9.51E-01,5.5,Carbamazepine,800617,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,14.07%,1.99E-01,FALSE
+2.5ppb_calibrant,2_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,2.5,85.30%,2.13E+00,5.5,Carbamazepine,2161422,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,25.63%,4.56E-01,FALSE
+5ppb_calibrant,5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,4.9,113.50%,5.56E+00,5.5,Carbamazepine,5026920,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,37.46%,1.20E+00,FALSE
+10ppb_calibrant,10ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,9.99,92.20%,9.21E+00,5.5,Carbamazepine,9187826,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,41.24%,1.99E+00,FALSE
+25ppb_calibrant,25ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,24.9,107.30%,2.67E+01,5.5,Carbamazepine,23577052,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,46.50%,5.80E+00,FALSE
+50ppb_calibrant,50ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,50.3,88.80%,4.47E+01,5.5,Carbamazepine,40864664,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,47.97%,9.71E+00,FALSE
+100ppb_calibrant,100ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,103.7,104.20%,1.08E+02,5.5,Carbamazepine,104431448,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,53.53%,2.35E+01,FALSE
+Other,250ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,256.08,14%,3.59E+01,5.54,Carbamazepine,35109176,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,16.03%,7.81E+00,TRUE
+Other,500ppbcalppb_cal_pharmaceutical_mix_100ppb_IS,Standard,515.09,165.30%,8.51E+02,5.5,Carbamazepine,721887104,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,48.69%,1.85E+02,TRUE
+Calibration_Blank,cal_blank_1,Blank,,#N/A,0,#N/A,Carbamazepine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_1,Blank,,#N/A,0,#N/A,Carbamazepine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_2,Blank,,#N/A,0,#N/A,Carbamazepine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,#N/A,0,FALSE
+Extraction_Blank,Ext_Blank_1_100ppb_IS,Unknown,,#N/A,9.05E-01,5.5,Carbamazepine,1310534,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,18.93%,1.89E-01,FALSE
+Extraction_Blank,Ext_Blank_2_100ppb_IS,Unknown,,#N/A,4.10E-02,5.5,Carbamazepine,9813,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.15%,1.49E-03,FALSE
+Extraction_Blank,Ext_Blank_3_100ppb_IS,Unknown,,#N/A,7.52E-02,5.5,Carbamazepine,66283,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.89%,8.93E-03,FALSE
+Natural_Snowfall,NS1_1_100ppb_IS,Unknown,,#N/A,3.68E-01,5.5,Carbamazepine,247312,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,7.25%,7.25E-02,FALSE
+Natural_Snowfall,NS1_2_100ppb_IS,Unknown,,#N/A,5.17E-02,11.2,Carbamazepine,22234,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.38%,3.81E-03,FALSE
+Natural_Snowfall,NS1_3_100ppb_IS,Unknown,,#N/A,5.80E-01,5.54,Carbamazepine,444296,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,11.86%,1.19E-01,FALSE
+Natural_Snowfall,NS3_1_100ppb_IS,Unknown,,#N/A,7.46E-01,5.5,Carbamazepine,511590,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,13.22%,1.55E-01,FALSE
+Natural_Snowfall,NS3_2_100ppb_IS,Unknown,,#N/A,1.52E-01,5.5,Carbamazepine,100017,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,2.31%,2.56E-02,FALSE
+Natural_Snowfall,NS3_3_100ppb_IS,Unknown,,#N/A,6.89E-01,5.5,Carbamazepine,429552,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,12.24%,1.42E-01,FALSE
+QC_Pooled,QC_Pool_100ppb_IS,Unknown,,#N/A,1.91E+00,5.5,Carbamazepine,1736344,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,11.59%,4.08E-01,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_1_100ppb_IS,Unknown,,#N/A,1.43E+01,5.5,Carbamazepine,11575068,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,11.33%,3.10E+00,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_1_dil_100ppb_IS,Unknown,,#N/A,1.01E+00,5.5,Carbamazepine,1023225,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,7.72%,2.12E-01,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_100ppb_IS,Unknown,,#N/A,2.03E+01,5.48,Carbamazepine,10889104,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,8.54%,4.41E+00,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_dil_100ppb_IS,Unknown,,#N/A,3.66E+00,5.5,Carbamazepine,3318650,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,8.98%,7.89E-01,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_star_100ppb_IS_,Unknown,,#N/A,1.12E+01,5.5,Carbamazepine,7398863,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,7.27%,2.42E+00,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_star_dil_100ppb_IS,Unknown,,#N/A,2.22E+00,5.5,Carbamazepine,2051954,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,14.71%,4.74E-01,FALSE
+Low_Snowmaking,SMRW_3_1_100ppb_IS,Unknown,,#N/A,1.16E-01,5.5,Carbamazepine,94839,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,1.67%,1.77E-02,FALSE
+Low_Snowmaking,SMRW_3_2_100ppb_IS,Unknown,,#N/A,4.90E-02,10.14,Carbamazepine,16894,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.32%,3.23E-03,FALSE
+Low_Snowmaking,SMRW_3_3_100ppb_IS,Unknown,,#N/A,3.14E-01,5.5,Carbamazepine,221673,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.49%,6.09E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_1_100ppb,Unknown,,#N/A,1.00E-01,5.5,Carbamazepine,49797,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,1.06%,1.43E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_2_100ppb,Unknown,,#N/A,1.69E-01,5.5,Carbamazepine,93295,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,1.39%,2.93E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_3_100ppb,Unknown,,#N/A,1.10E-01,5.5,Carbamazepine,52753,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,1.00%,1.66E-02,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_2,Unknown,,#N/A,4.16E+01,5.5,Carbamazepine,54965048,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,52.60%,9.04E+00,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3,Unknown,,#N/A,1.22E+02,5.5,Carbamazepine,130837568,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,63.92%,2.65E+01,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3_20240611081856,Unknown,,#N/A,4.05E+01,5.5,Carbamazepine,43202644,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,45.04%,8.80E+00,FALSE
+Other,cal_blank_1_4,Unknown,,#N/A,5.43E-02,10.1,Carbamazepine,22597,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.44%,4.38E-03,FALSE
+Other,cal_blank_1_5,Unknown,,#N/A,4.30E-02,10.1,Carbamazepine,9377,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.19%,1.92E-03,FALSE
+Other,cal_blank_2_3,Unknown,,#N/A,7.86E-02,10.1,Carbamazepine,54411,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.97%,9.65E-03,FALSE
+Other,cal_blank_2_4,Unknown,,#N/A,8.18E-02,10.06,Carbamazepine,50219,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,1.04%,1.04E-02,FALSE
+Other,cal_blank_100_1_3,Unknown,,#N/A,4.55E-02,10.06,Carbamazepine,12196,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.25%,2.48E-03,FALSE
+Other,cal_blank1_2,Unknown,,#N/A,3.71E-02,5.99,Carbamazepine,2506,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,0.06%,6.48E-04,FALSE
+Other,instrument_blank_1,Unknown,,#N/A,0,14.05,Carbamazepine,3049,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,∞,0,FALSE
+Other,instrument_blank_2,Unknown,,#N/A,0,0.37,Carbamazepine,135636,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,∞,0,FALSE
+Other,instrument_blank_3,Unknown,,#N/A,0,10.1,Carbamazepine,9098,,Ratio to surrogate Sulfamethizole-d4,Ion [194.096549/194.096549] 194.0960+,∞,0,FALSE
+0.1_ppb_calibrant,0_point_1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.1,-795.40%,-7.95E-01,6.4,Fexofenadine,12308,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0.30%,3.01E-03,TRUE
+0.5_ppb_calibrant,0_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.49,-102.90%,-5.04E-01,6.4,Fexofenadine,35477,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0.78%,9.33E-03,TRUE
+1ppb_calibrant,1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.96,83.50%,8.02E-01,6.4,Fexofenadine,151184,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,2.66%,3.76E-02,FALSE
+2.5ppb_calibrant,2_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,2.45,85.80%,2.10E+00,6.4,Fexofenadine,311973,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,3.70%,6.58E-02,FALSE
+5ppb_calibrant,5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,4.83,137.60%,6.65E+00,6.36,Fexofenadine,687168,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,5.12%,1.64E-01,FALSE
+10ppb_calibrant,10ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,9.74,97.50%,9.50E+00,6.36,Fexofenadine,1041805,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,4.68%,2.26E-01,FALSE
+25ppb_calibrant,25ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,24.27,95.60%,2.32E+01,6.4,Fexofenadine,2127105,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,4.19%,5.23E-01,FALSE
+50ppb_calibrant,50ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,49,41.60%,2.04E+01,6.36,Fexofenadine,1947544,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,2.29%,4.63E-01,TRUE
+100ppb_calibrant,100ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,101,112.60%,1.14E+02,6.4,Fexofenadine,11058557,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,5.67%,2.49E+00,TRUE
+Other,250ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,249.5,145.50%,3.63E+02,6.4,Fexofenadine,35487228,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,16.20%,7.89E+00,TRUE
+Other,500ppbcalppb_cal_pharmaceutical_mix_100ppb_IS,Standard,501.9,785.70%,3.94E+03,6.4,Fexofenadine,333548992,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,22.50%,8.55E+01,TRUE
+Calibration_Blank,cal_blank_1,Blank,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_1,Blank,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_2,Blank,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Extraction_Blank,Ext_Blank_1_100ppb_IS,Unknown,,#N/A,-8.51E-01,6.4,Fexofenadine,12497,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0.18%,1.81E-03,FALSE
+Extraction_Blank,Ext_Blank_2_100ppb_IS,Unknown,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Extraction_Blank,Ext_Blank_3_100ppb_IS,Unknown,,#N/A,-8.09E-01,1.07,Fexofenadine,20160,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0.27%,2.72E-03,FALSE
+Natural_Snowfall,NS1_1_100ppb_IS,Unknown,,#N/A,2.85E-03,6.4,Fexofenadine,69260,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,2.03%,2.03E-02,FALSE
+Natural_Snowfall,NS1_2_100ppb_IS,Unknown,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Natural_Snowfall,NS1_3_100ppb_IS,Unknown,,#N/A,-3.70E-01,6.4,Fexofenadine,45844,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,1.22%,1.22E-02,FALSE
+Natural_Snowfall,NS3_1_100ppb_IS,Unknown,,#N/A,-8.93E-01,6.45,Fexofenadine,2975,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0.08%,9.00E-04,FALSE
+Natural_Snowfall,NS3_2_100ppb_IS,Unknown,,#N/A,1.58E+00,6.49,Fexofenadine,212494,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,4.90%,5.44E-02,FALSE
+Natural_Snowfall,NS3_3_100ppb_IS,Unknown,,#N/A,-7.15E-01,6.45,Fexofenadine,14367,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0.41%,4.76E-03,FALSE
+QC_Pooled,QC_Pool_100ppb_IS,Unknown,,#N/A,2.08E+01,6.4,Fexofenadine,2004982,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,13.38%,4.71E-01,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_1_100ppb_IS,Unknown,,#N/A,1.61E+02,6.4,Fexofenadine,13139511,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,12.87%,3.52E+00,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_1_dil_100ppb_IS,Unknown,,#N/A,2.84E+00,6.4,Fexofenadine,394217,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,2.97%,8.17E-02,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_100ppb_IS,Unknown,,#N/A,2.37E+02,6.45,Fexofenadine,12751378,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,10.00%,5.17E+00,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_dil_100ppb_IS,Unknown,,#N/A,1.39E+01,6.4,Fexofenadine,1349527,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,3.65%,3.21E-01,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_star_100ppb_IS_,Unknown,,#N/A,1.97E+02,6.4,Fexofenadine,13152886,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,12.93%,4.30E+00,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_star_dil_100ppb_IS,Unknown,,#N/A,6.57E+00,6.36,Fexofenadine,703541,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,5.04%,1.63E-01,FALSE
+Low_Snowmaking,SMRW_3_1_100ppb_IS,Unknown,,#N/A,-7.60E-01,6.4,Fexofenadine,20216,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0.36%,3.78E-03,FALSE
+Low_Snowmaking,SMRW_3_2_100ppb_IS,Unknown,,#N/A,-9.13E-01,2.78,Fexofenadine,2360,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0.05%,4.51E-04,FALSE
+Low_Snowmaking,SMRW_3_3_100ppb_IS,Unknown,,#N/A,1.19E+01,6.45,Fexofenadine,1013757,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,2.26%,2.79E-01,FALSE
+High_Snowmaking_Mar_2022,SMRW1_1_100ppb,Unknown,,#N/A,4.92E-01,6.49,Fexofenadine,107544,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,2.30%,3.09E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_2_100ppb,Unknown,,#N/A,5.55E+00,6.49,Fexofenadine,447446,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,6.65%,1.41E-01,FALSE
+High_Snowmaking_Mar_2022,SMRW1_3_100ppb,Unknown,,#N/A,1.71E+00,6.53,Fexofenadine,182514,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,3.46%,5.73E-02,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_2,Unknown,,#N/A,8.77E+00,6.36,Fexofenadine,1279011,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,1.22%,2.10E-01,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3,Unknown,,#N/A,6.03E+01,6.4,Fexofenadine,6558745,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,3.20%,1.33E+00,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3_20240611081856,Unknown,,#N/A,4.50E+01,6.4,Fexofenadine,4886590,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,5.09%,9.96E-01,FALSE
+Other,cal_blank_1_4,Unknown,,#N/A,-9.34E-01,9.17,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,0%,0.00E+00,FALSE
+Other,cal_blank_1_5,Unknown,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Other,cal_blank_2_3,Unknown,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Other,cal_blank_2_4,Unknown,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Other,cal_blank_100_1_3,Unknown,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Other,cal_blank1_2,Unknown,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+Other,instrument_blank_1,Unknown,,#N/A,NaN,12.79,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,NaN,NaN,FALSE
+Other,instrument_blank_2,Unknown,,#N/A,0,6.4,Fexofenadine,5281,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,∞,0,FALSE
+Other,instrument_blank_3,Unknown,,#N/A,0,#N/A,Fexofenadine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [171.117349/171.117349] 171.1168+,#N/A,0,FALSE
+0.1_ppb_calibrant,0_point_1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.1,137.70%,1.38E-01,5.33,Flecainide,62700,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,1.53%,1.53E-02,FALSE
+0.5_ppb_calibrant,0_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.48,104.10%,5.00E-01,5.33,Flecainide,267654,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,5.88%,7.04E-02,FALSE
+1ppb_calibrant,1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.95,103%,9.79E-01,5.33,Flecainide,575241,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,10.11%,1.43E-01,FALSE
+2.5ppb_calibrant,2_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,2.42,61.80%,1.50E+00,5.33,Flecainide,1051416,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,12.47%,2.22E-01,FALSE
+5ppb_calibrant,5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,4.76,93.70%,4.46E+00,5.33,Flecainide,2811835,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,20.95%,6.72E-01,FALSE
+10ppb_calibrant,10ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,9.6,95.90%,9.20E+00,5.33,Flecainide,6419748,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,28.82%,1.39E+00,FALSE
+25ppb_calibrant,25ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,23.95,112.70%,2.70E+01,5.33,Flecainide,16655228,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,32.85%,4.10E+00,FALSE
+50ppb_calibrant,50ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,48.39,85.80%,4.15E+01,5.33,Flecainide,26544082,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,31.16%,6.30E+00,FALSE
+100ppb_calibrant,100ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,99.7,105.40%,1.05E+02,5.33,Flecainide,71056712,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,36.42%,1.60E+01,FALSE
+Other,250ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,246.3,68.30%,1.68E+02,5.33,Flecainide,115040344,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,52.52%,2.56E+01,TRUE
+Other,500ppbcalppb_cal_pharmaceutical_mix_100ppb_IS,Standard,249.4,134.80%,3.36E+02,5.33,Flecainide,199364480,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,13.45%,5.11E+01,TRUE
+Calibration_Blank,cal_blank_1,Blank,,#N/A,0,#N/A,Flecainide,0,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_1,Blank,,#N/A,0,#N/A,Flecainide,0,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_2,Blank,,#N/A,0,#N/A,Flecainide,0,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,#N/A,0,FALSE
+Extraction_Blank,Ext_Blank_1_100ppb_IS,Unknown,,#N/A,1.06E-01,5.31,Flecainide,72765,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,1.05%,1.05E-02,FALSE
+Extraction_Blank,Ext_Blank_2_100ppb_IS,Unknown,,#N/A,5.39E-02,5.33,Flecainide,16965,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.26%,2.58E-03,FALSE
+Extraction_Blank,Ext_Blank_3_100ppb_IS,Unknown,,#N/A,5.19E-02,5.33,Flecainide,16866,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.23%,2.27E-03,FALSE
+Natural_Snowfall,NS1_1_100ppb_IS,Unknown,,#N/A,7.54E-02,5.33,Flecainide,19954,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.59%,5.85E-03,FALSE
+Natural_Snowfall,NS1_2_100ppb_IS,Unknown,,#N/A,4.49E-02,5.33,Flecainide,7063,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.12%,1.21E-03,FALSE
+Natural_Snowfall,NS1_3_100ppb_IS,Unknown,,#N/A,5.94E-02,5.33,Flecainide,12813,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.34%,3.42E-03,FALSE
+Natural_Snowfall,NS3_1_100ppb_IS,Unknown,,#N/A,1.04E-01,5.35,Flecainide,33661,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.87%,1.02E-02,FALSE
+Natural_Snowfall,NS3_2_100ppb_IS,Unknown,,#N/A,1.75E-01,5.35,Flecainide,82257,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,1.90%,2.11E-02,FALSE
+Natural_Snowfall,NS3_3_100ppb_IS,Unknown,,#N/A,1.24E-01,5.35,Flecainide,39921,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,1.14%,1.32E-02,FALSE
+QC_Pooled,QC_Pool_100ppb_IS,Unknown,,#N/A,6.70E+00,5.33,Flecainide,4311094,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,28.77%,1.01E+00,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_1_100ppb_IS,Unknown,,#N/A,9.33E+01,5.35,Flecainide,52991340,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,51.89%,1.42E+01,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_1_dil_100ppb_IS,Unknown,,#N/A,7.85E+00,5.31,Flecainide,5732575,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,43.23%,1.19E+00,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_100ppb_IS,Unknown,,#N/A,1.37E+02,5.43,Flecainide,51242140,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,40.18%,2.08E+01,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_dil_100ppb_IS,Unknown,,#N/A,3.90E+01,5.33,Flecainide,24896306,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,67.38%,5.92E+00,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_star_100ppb_IS_,Unknown,,#N/A,7.27E+01,5.37,Flecainide,33797464,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,33.21%,1.11E+01,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_star_dil_100ppb_IS,Unknown,,#N/A,6.09E+00,5.33,Flecainide,3979299,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,28.53%,9.20E-01,FALSE
+Low_Snowmaking,SMRW_3_1_100ppb_IS,Unknown,,#N/A,2.57E-01,5.31,Flecainide,178649,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,3.15%,3.34E-02,FALSE
+Low_Snowmaking,SMRW_3_2_100ppb_IS,Unknown,,#N/A,1.38E-01,5.33,Flecainide,80027,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,1.53%,1.53E-02,FALSE
+Low_Snowmaking,SMRW_3_3_100ppb_IS,Unknown,,#N/A,7.13E+01,5.33,Flecainide,39429100,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,87.91%,1.08E+01,FALSE
+High_Snowmaking_Mar_2022,SMRW1_1_100ppb,Unknown,,#N/A,1.46E+00,5.37,Flecainide,750131,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,16.02%,2.16E-01,FALSE
+High_Snowmaking_Mar_2022,SMRW1_2_100ppb,Unknown,,#N/A,5.46E+00,5.35,Flecainide,2624033,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,39.02%,8.25E-01,FALSE
+High_Snowmaking_Mar_2022,SMRW1_3_100ppb,Unknown,,#N/A,3.14E+00,5.39,Flecainide,1502320,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,28.47%,4.71E-01,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_2,Unknown,,#N/A,4.38E+01,5.33,Flecainide,40494392,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,38.76%,6.66E+00,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3,Unknown,,#N/A,7.49E+01,5.33,Flecainide,56238368,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,27.48%,1.14E+01,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3_20240611081856,Unknown,,#N/A,4.84E+01,5.33,Flecainide,36109372,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,37.65%,7.36E+00,FALSE
+Other,cal_blank_1_4,Unknown,,#N/A,4.02E-02,1.44,Flecainide,2543,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.05%,4.93E-04,FALSE
+Other,cal_blank_1_5,Unknown,,#N/A,4.15E-02,5.33,Flecainide,3418,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.07%,7.00E-04,FALSE
+Other,cal_blank_2_3,Unknown,,#N/A,3.69E-02,8.61,Flecainide,0,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0%,0.00E+00,FALSE
+Other,cal_blank_2_4,Unknown,,#N/A,4.11E-02,5.33,Flecainide,3062,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,0.06%,6.31E-04,FALSE
+Other,cal_blank_100_1_3,Unknown,,#N/A,0,#N/A,Flecainide,0,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,#N/A,0,FALSE
+Other,cal_blank1_2,Unknown,,#N/A,0,#N/A,Flecainide,0,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,#N/A,0,FALSE
+Other,instrument_blank_1,Unknown,,#N/A,0,#N/A,Flecainide,0,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,#N/A,0,FALSE
+Other,instrument_blank_2,Unknown,,#N/A,0,5.33,Flecainide,12618,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,∞,0,FALSE
+Other,instrument_blank_3,Unknown,,#N/A,0,#N/A,Flecainide,0,,Ratio to surrogate Sulfamethizole-d4,Ion [398.118849/398.118849] 398.1183+,#N/A,0,FALSE
+0.1_ppb_calibrant,0_point_1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.1,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,TRUE
+0.5_ppb_calibrant,0_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.49,152.10%,7.45E-01,2.96,Lamotrigine,9403,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.21%,2.47E-03,TRUE
+1ppb_calibrant,1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.97,131.10%,1.27E+00,2.96,Lamotrigine,19554,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.34%,4.87E-03,FALSE
+2.5ppb_calibrant,2_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,2.47,63.20%,1.56E+00,3,Lamotrigine,29342,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.35%,6.19E-03,FALSE
+5ppb_calibrant,5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,4.87,112.50%,5.48E+00,2.96,Lamotrigine,100476,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.75%,2.40E-02,FALSE
+10ppb_calibrant,10ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,9.82,88.50%,8.69E+00,3,Lamotrigine,178075,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.80%,3.87E-02,FALSE
+25ppb_calibrant,25ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,24.47,104.60%,2.56E+01,2.96,Lamotrigine,469843,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.93%,1.16E-01,FALSE
+50ppb_calibrant,50ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,49.43,80%,3.96E+01,2.96,Lamotrigine,754438,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.89%,1.79E-01,TRUE
+100ppb_calibrant,100ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,101.89,58.20%,5.93E+01,2.96,Lamotrigine,1196100,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.61%,2.69E-01,TRUE
+Other,250ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,251.58,48.60%,1.22E+02,2.96,Lamotrigine,2499769,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,1.14%,5.56E-01,TRUE
+Other,500ppbcalppb_cal_pharmaceutical_mix_100ppb_IS,Standard,506.03,43.70%,2.21E+02,2.96,Lamotrigine,3919255,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.26%,1.00E+00,TRUE
+Calibration_Blank,cal_blank_1,Blank,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_1,Blank,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_2,Blank,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Extraction_Blank,Ext_Blank_1_100ppb_IS,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Extraction_Blank,Ext_Blank_2_100ppb_IS,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Extraction_Blank,Ext_Blank_3_100ppb_IS,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Natural_Snowfall,NS1_1_100ppb_IS,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Natural_Snowfall,NS1_2_100ppb_IS,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Natural_Snowfall,NS1_3_100ppb_IS,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Natural_Snowfall,NS3_1_100ppb_IS,Unknown,,#N/A,9.10E-01,6.54,Lamotrigine,10635,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.27%,3.22E-03,FALSE
+Natural_Snowfall,NS3_2_100ppb_IS,Unknown,,#N/A,8.01E-01,3,Lamotrigine,10642,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.25%,2.72E-03,FALSE
+Natural_Snowfall,NS3_3_100ppb_IS,Unknown,,#N/A,4.41E-01,2.96,Lamotrigine,3282,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.09%,1.09E-03,FALSE
+QC_Pooled,QC_Pool_100ppb_IS,Unknown,,#N/A,1.01E+01,3,Lamotrigine,191232,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,1.28%,4.49E-02,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_1_100ppb_IS,Unknown,,#N/A,1.39E+01,3,Lamotrigine,232571,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.23%,6.23E-02,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_1_dil_100ppb_IS,Unknown,,#N/A,2.48E+00,2.96,Lamotrigine,50035,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.38%,1.04E-02,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_100ppb_IS,Unknown,,#N/A,1.47E+01,3.17,Lamotrigine,163088,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.13%,6.61E-02,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_dil_100ppb_IS,Unknown,,#N/A,8.04E+00,3,Lamotrigine,150065,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.41%,3.57E-02,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_star_100ppb_IS_,Unknown,,#N/A,1.26E+01,3.04,Lamotrigine,172681,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.17%,5.65E-02,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_star_dil_100ppb_IS,Unknown,,#N/A,7.05E+00,2.96,Lamotrigine,134817,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.97%,3.12E-02,FALSE
+Low_Snowmaking,SMRW_3_1_100ppb_IS,Unknown,,#N/A,3.64E-01,3,Lamotrigine,3920,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.07%,7.33E-04,FALSE
+Low_Snowmaking,SMRW_3_2_100ppb_IS,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Low_Snowmaking,SMRW_3_3_100ppb_IS,Unknown,,#N/A,2.04E+01,3,Lamotrigine,334860,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.75%,9.20E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_1_100ppb,Unknown,,#N/A,3.78E+00,3,Lamotrigine,56643,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,1.21%,1.63E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_2_100ppb,Unknown,,#N/A,1.59E+01,3.04,Lamotrigine,226827,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,3.37%,7.13E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_3_100ppb,Unknown,,#N/A,1.74E+01,3,Lamotrigine,249274,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,4.72%,7.82E-02,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_2,Unknown,,#N/A,3.43E+01,3,Lamotrigine,943504,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.90%,1.55E-01,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3,Unknown,,#N/A,2.91E+01,3,Lamotrigine,649774,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.32%,1.31E-01,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3_20240611081856,Unknown,,#N/A,3.01E+01,3,Lamotrigine,667169,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,0.70%,1.36E-01,FALSE
+Other,cal_blank_1_4,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Other,cal_blank_1_5,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Other,cal_blank_2_3,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Other,cal_blank_2_4,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Other,cal_blank_100_1_3,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Other,cal_blank1_2,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Other,instrument_blank_1,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Other,instrument_blank_2,Unknown,,#N/A,0,#N/A,Lamotrigine,0,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,#N/A,0,FALSE
+Other,instrument_blank_3,Unknown,,#N/A,0,11.99,Lamotrigine,2486,,Ratio to surrogate Sulfamethizole-d4,Ion [210.983049/210.983049] 210.9825+,∞,0,FALSE
+0.1_ppb_calibrant,0_point_1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.1,2661.30%,2.66E+00,3.17,Fluconazole,13969,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.34%,3.42E-03,TRUE
+0.5_ppb_calibrant,0_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,0.51,569.60%,2.91E+00,3.17,Fluconazole,57276,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,1.26%,1.51E-02,TRUE
+1ppb_calibrant,1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,1,324.80%,3.25E+00,3.17,Fluconazole,126343,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,2.22%,3.14E-02,TRUE
+2.5ppb_calibrant,2_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,2.56,125.10%,3.20E+00,3.21,Fluconazole,138849,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,1.65%,2.93E-02,FALSE
+5ppb_calibrant,5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,5,113%,5.65E+00,3.17,Fluconazole,611438,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,4.56%,1.46E-01,FALSE
+10ppb_calibrant,10ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,10.16,63.20%,6.43E+00,3.21,Fluconazole,843907,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,3.79%,1.83E-01,FALSE
+25ppb_calibrant,25ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,25.3,87.80%,2.22E+01,3.17,Fluconazole,3812273,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,7.52%,9.38E-01,FALSE
+50ppb_calibrant,50ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,51.13,110.80%,5.66E+01,3.17,Fluconazole,10872577,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,12.76%,2.58E+00,FALSE
+100ppb_calibrant,100ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,105.4,15.50%,1.63E+01,3.25,Fluconazole,2916312,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,1.49%,6.56E-01,TRUE
+Other,250ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,260.25,48.20%,1.25E+02,3.21,Fluconazole,26402020,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,12.05%,5.87E+00,TRUE
+Other,500ppbcalppb_cal_pharmaceutical_mix_100ppb_IS,Standard,523.48,226%,1.18E+03,3.17,Fluconazole,219957008,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,14.84%,5.64E+01,TRUE
+Calibration_Blank,cal_blank_1,Blank,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_1,Blank,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Calibration_Blank,calblank_2_2,Blank,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Extraction_Blank,Ext_Blank_1_100ppb_IS,Unknown,,#N/A,2.60E+00,3.17,Fluconazole,2589,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.04%,3.74E-04,FALSE
+Extraction_Blank,Ext_Blank_2_100ppb_IS,Unknown,,#N/A,2.60E+00,0.32,Fluconazole,2600,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.04%,3.96E-04,FALSE
+Extraction_Blank,Ext_Blank_3_100ppb_IS,Unknown,,#N/A,2.59E+00,8.09,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0%,0.00E+00,FALSE
+Natural_Snowfall,NS1_1_100ppb_IS,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Natural_Snowfall,NS1_2_100ppb_IS,Unknown,,#N/A,2.60E+00,3.33,Fluconazole,2499,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.04%,4.28E-04,FALSE
+Natural_Snowfall,NS1_3_100ppb_IS,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Natural_Snowfall,NS3_1_100ppb_IS,Unknown,,#N/A,2.64E+00,3.17,Fluconazole,8514,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.22%,2.58E-03,FALSE
+Natural_Snowfall,NS3_2_100ppb_IS,Unknown,,#N/A,2.71E+00,3.17,Fluconazole,22116,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.51%,5.66E-03,FALSE
+Natural_Snowfall,NS3_3_100ppb_IS,Unknown,,#N/A,2.64E+00,3.17,Fluconazole,6901,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.20%,2.29E-03,FALSE
+QC_Pooled,QC_Pool_100ppb_IS,Unknown,,#N/A,1.48E+01,3.17,Fluconazole,2484208,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,16.58%,5.84E-01,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_1_100ppb_IS,Unknown,,#N/A,1.17E+02,3.17,Fluconazole,20444300,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,20.02%,5.47E+00,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_1_dil_100ppb_IS,Unknown,,#N/A,7.96E+00,3.17,Fluconazole,1236643,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,9.33%,2.56E-01,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_100ppb_IS,Unknown,,#N/A,4.27E+02,3.17,Fluconazole,50013912,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,39.22%,2.03E+01,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_dil_100ppb_IS,Unknown,,#N/A,1.76E+01,3.21,Fluconazole,3025214,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,8.19%,7.19E-01,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_star_100ppb_IS_,Unknown,,#N/A,3.05E+02,3.21,Fluconazole,44178548,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,43.42%,1.44E+01,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_star_dil_100ppb_IS,Unknown,,#N/A,1.59E+01,3.17,Fluconazole,2751994,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,19.73%,6.36E-01,FALSE
+Low_Snowmaking,SMRW_3_1_100ppb_IS,Unknown,,#N/A,2.70E+00,3.17,Fluconazole,28489,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.50%,5.33E-03,FALSE
+Low_Snowmaking,SMRW_3_2_100ppb_IS,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Low_Snowmaking,SMRW_3_3_100ppb_IS,Unknown,,#N/A,3.83E+00,3.17,Fluconazole,215032,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.48%,5.91E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_1_100ppb,Unknown,,#N/A,4.03E+00,3.21,Fluconazole,239147,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,5.11%,6.88E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_2_100ppb,Unknown,,#N/A,3.59E+00,3.21,Fluconazole,151280,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,2.25%,4.75E-02,FALSE
+High_Snowmaking_Mar_2022,SMRW1_3_100ppb,Unknown,,#N/A,3.27E+00,3.17,Fluconazole,103935,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,1.97%,3.26E-02,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_2,Unknown,,#N/A,5.09E+00,3.25,Fluconazole,726205,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.70%,1.19E-01,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3,Unknown,,#N/A,2.57E+01,3.21,Fluconazole,5450220,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,2.66%,1.10E+00,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3_20240611081856,Unknown,,#N/A,2.88E+01,3.21,Fluconazole,6144028,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,6.41%,1.25E+00,FALSE
+Other,cal_blank_1_4,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Other,cal_blank_1_5,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Other,cal_blank_2_3,Unknown,,#N/A,2.60E+00,5.9,Fluconazole,2177,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.04%,3.86E-04,FALSE
+Other,cal_blank_2_4,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Other,cal_blank_100_1_3,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Other,cal_blank1_2,Unknown,,#N/A,2.60E+00,0.36,Fluconazole,2722,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,0.07%,7.04E-04,FALSE
+Other,instrument_blank_1,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+Other,instrument_blank_2,Unknown,,#N/A,0,5.49,Fluconazole,2583,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,∞,0,FALSE
+Other,instrument_blank_3,Unknown,,#N/A,0,#N/A,Fluconazole,0,,Ratio to surrogate Sulfamethizole-d4,Ion [220.068549/220.068549] 220.0680+,#N/A,0,FALSE
+0.1_ppb_calibrant,0_point_1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4090403,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,99.66%,4.09E+06,FALSE
+0.5_ppb_calibrant,0_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,3804429,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,83.57%,3.80E+06,FALSE
+1ppb_calibrant,1ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4017365,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,70.60%,4.02E+06,FALSE
+2.5ppb_calibrant,2_point_5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4740528,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,56.21%,4.74E+06,FALSE
+5ppb_calibrant,5ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4182036,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,31.16%,4.18E+06,FALSE
+10ppb_calibrant,10ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4606152,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,20.68%,4.61E+06,FALSE
+25ppb_calibrant,25ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4065200,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,8.02%,4.07E+06,FALSE
+50ppb_calibrant,50ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4210493,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,4.94%,4.21E+06,FALSE
+100ppb_calibrant,100ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4448334,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,2.28%,4.45E+06,FALSE
+Other,250ppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,4497385,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,2.05%,4.50E+06,FALSE
+Other,500ppbcalppb_cal_pharmaceutical_mix_100ppb_IS,Standard,,#N/A,0,2.71,Sulfamethizole-d4,3900877,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,0.26%,3.90E+06,FALSE
+Calibration_Blank,cal_blank_1,Blank,,#N/A,0,2.71,Sulfamethizole-d4,4052574,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,4.05E+06,FALSE
+Calibration_Blank,calblank_2_1,Blank,,#N/A,0,2.71,Sulfamethizole-d4,4175033,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,4.18E+06,FALSE
+Calibration_Blank,calblank_2_2,Blank,,#N/A,0,2.71,Sulfamethizole-d4,3831189,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,3.83E+06,FALSE
+Extraction_Blank,Ext_Blank_1_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,6921775,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,99.96%,6.92E+06,FALSE
+Extraction_Blank,Ext_Blank_2_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,6566873,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,99.96%,6.57E+06,FALSE
+Extraction_Blank,Ext_Blank_3_100ppb_IS,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,7419368,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,7.42E+06,FALSE
+Natural_Snowfall,NS1_1_100ppb_IS,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,3409416,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,3.41E+06,FALSE
+Natural_Snowfall,NS1_2_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,5836174,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,99.96%,5.84E+06,FALSE
+Natural_Snowfall,NS1_3_100ppb_IS,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,3745860,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,3.75E+06,FALSE
+Natural_Snowfall,NS3_1_100ppb_IS,Unknown,,#N/A,0,2.69,Sulfamethizole-d4,3303870,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,85.34%,3.30E+06,FALSE
+Natural_Snowfall,NS3_2_100ppb_IS,Unknown,,#N/A,0,2.69,Sulfamethizole-d4,3906152,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,90.13%,3.91E+06,FALSE
+Natural_Snowfall,NS3_3_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,3016750,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,85.93%,3.02E+06,FALSE
+QC_Pooled,QC_Pool_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,4255685,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,28.40%,4.26E+06,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_1_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,3736015,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,3.66%,3.74E+06,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_1_dil_100ppb_IS,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,4822828,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,36.37%,4.82E+06,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_100ppb_IS,Unknown,,#N/A,0,2.69,Sulfamethizole-d4,2468390,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,1.94%,2.47E+06,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_dil_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,4207125,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,11.39%,4.21E+06,FALSE
+High_Snowmaking_Dec_2022,SMRW_2_2_star_100ppb_IS_,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,3058051,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,3.01%,3.06E+06,FALSE
+High_Snowmaking_Dil_Dec_2022,SMRW_2_2_star_dil_100ppb_IS,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,4325450,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,31.01%,4.33E+06,FALSE
+Low_Snowmaking,SMRW_3_1_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,5344583,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,94.25%,5.34E+06,FALSE
+Low_Snowmaking,SMRW_3_2_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,5228093,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,5.23E+06,FALSE
+Low_Snowmaking,SMRW_3_3_100ppb_IS,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,3638616,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,8.11%,3.64E+06,FALSE
+High_Snowmaking_Mar_2022,SMRW1_1_100ppb,Unknown,,#N/A,0,2.67,Sulfamethizole-d4,3478490,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,74.30%,3.48E+06,FALSE
+High_Snowmaking_Mar_2022,SMRW1_2_100ppb,Unknown,,#N/A,0,2.69,Sulfamethizole-d4,3182049,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,47.32%,3.18E+06,FALSE
+High_Snowmaking_Mar_2022,SMRW1_3_100ppb,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,3186886,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,60.38%,3.19E+06,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_2,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,6079030,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,5.82%,6.08E+06,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,4943531,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,2.42%,4.94E+06,FALSE
+Other,50ppb_cal_pharmaceutical_mix_100ppb_IS_3_20240611081856,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,4907040,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,5.12%,4.91E+06,FALSE
+Other,cal_blank_1_4,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,5156361,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,5.16E+06,FALSE
+Other,cal_blank_1_5,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,4885329,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,4.89E+06,FALSE
+Other,cal_blank_2_3,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,5636287,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,99.96%,5.64E+06,FALSE
+Other,cal_blank_2_4,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,4849971,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,4.85E+06,FALSE
+Other,cal_blank_100_1_3,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,4926151,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,100%,4.93E+06,FALSE
+Other,cal_blank1_2,Unknown,,#N/A,0,2.71,Sulfamethizole-d4,3866706,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,99.93%,3.87E+06,FALSE
+Other,instrument_blank_1,Unknown,,#N/A,0,#N/A,Sulfamethizole-d4,0,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,#N/A,0,FALSE
+Other,instrument_blank_2,Unknown,,#N/A,0,#N/A,Sulfamethizole-d4,0,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,#N/A,0,FALSE
+Other,instrument_blank_3,Unknown,,#N/A,0,#N/A,Sulfamethizole-d4,0,Surrogate Standard,,Ion [160.037249/160.037249] 160.0367+,#N/A,0,FALSE

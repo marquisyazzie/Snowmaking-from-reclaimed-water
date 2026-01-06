@@ -1,0 +1,140 @@
+---
+title: "Calibration curves custom"
+output: html_document
+date: "2025-08-14"
+---
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/Targeted analysis of SMRW and NS/SMRW_PRM_Pharma_retry_06102024/custom cal curve")
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+```
+
+
+```{r}
+ws <- read.csv("SMRW_PRM_06112024_transitions_for_quant.csv", header= T)
+```
+
+```{r}
+ws <- subset(ws, Sample.Type == "Standard")
+
+ws <- subset(ws, Exclude.From.Calibration == "FALSE")
+
+ws <- subset(ws, Molecule_Name!= "Sulfamethizole-d4")
+```
+
+```{r}
+
+
+# Get unique molecule names
+molecules <- unique(ws$Molecule_Name)
+
+# Loop over each molecule
+for (mol in molecules) {
+  
+  # Subset the data for this molecule
+  df_sub <- ws %>% filter(Molecule_Name == mol)
+
+  # Create the plot
+  p <- ggplot(df_sub, aes(x = Explicit.Analyte.Concentration, y = Normalized_Area)) +
+    geom_point(color = "blue", size = 2) +
+    geom_smooth(method = "lm", se = TRUE, color = "red") +
+    theme_classic() +
+    labs(
+      title = paste("Linear Regression for", mol),
+      x = "Explicit Concentration",
+      y = "Normalized Peak Area"
+    )
+
+  # Display the plot
+  print(p)
+}
+```
+
+```{r}
+# Get unique molecule names
+molecules <- unique(ws$Molecule_Name)
+
+for (mol in molecules) {
+  
+  # Subset the data for this molecule
+  df_sub <- ws %>% filter(Molecule_Name == mol)
+  
+  # Fit 1/x weighted regression
+  fit <- lm(
+    Normalized_Area ~ Explicit.Analyte.Concentration,
+    data = df_sub,
+    weights = 1 / Explicit.Analyte.Concentration
+  )
+  
+  # Create prediction data
+  df_pred <- data.frame(
+    Explicit.Analyte.Concentration = seq(
+      min(df_sub$Explicit.Analyte.Concentration, na.rm = TRUE),
+      max(df_sub$Explicit.Analyte.Concentration, na.rm = TRUE),
+      length.out = 100
+    )
+  )
+  df_pred$Predicted <- predict(fit, newdata = df_pred)
+  
+  # Create plot
+  p <- ggplot(df_sub, aes(x = Explicit.Analyte.Concentration, y = Normalized_Area)) +
+    geom_point(color = "blue", size = 2) +
+    geom_line(data = df_pred, aes(y = Predicted), color = "red", linewidth = 1) +
+    theme_classic() +
+    labs(
+      title = paste("1/x Weighted Linear Regression for", mol),
+      x = "Explicit Concentration",
+      y = "Normalized Peak Area"
+    )
+  # Save plot
+  ggsave(
+    filename = paste0("Weighted_LR_", mol, ".svg"),
+    plot = p,
+    width = 6, height = 4, dpi = 300
+  )
+  print(p)
+}
+```
+
+
+```{r}
+# Get slope, intercept, and R² for each Molecule
+lm_results <- ws %>%
+  group_by(Molecule_Name) %>%
+  do({
+    fit <- lm(Normalized_Area ~ Explicit.Analyte.Concentration, data = .)
+    data.frame(
+      Intercept = coef(fit)[1],
+      Slope = coef(fit)[2],
+      R2 = summary(fit)$r.squared
+    )
+  }) %>%
+  ungroup()
+
+lm_results
+```
+```{r}
+lm_results_weight <- ws %>%
+  group_by(Molecule_Name) %>%
+  do({
+    fit <- lm(
+      Normalized_Area ~ Explicit.Analyte.Concentration,
+      data = .,
+      weights = 1 / Explicit.Analyte.Concentration
+    )
+    data.frame(
+      Intercept = coef(fit)[1],
+      Slope = coef(fit)[2],
+      R2 = summary(fit)$r.squared
+    )
+  }) %>%
+  ungroup()
+
+lm_results_weight
+```
+
