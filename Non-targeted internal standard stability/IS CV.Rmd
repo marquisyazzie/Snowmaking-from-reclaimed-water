@@ -1,0 +1,284 @@
+---
+title: "CV of IS"
+output: html_document
+date: "2025-08-15"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/Aron_Lab_Data/SMRW_vs_NS_project/QC/pos_averaged/IS CV")
+```
+
+```{r}
+library(ggplot2)
+library(stringr)
+library(data.table)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(reshape)     
+library(gplots)
+library(pheatmap)
+library(heatmap3)
+library(magrittr) 
+library(tibble) 
+library(RColorBrewer)
+library(paletteer)
+library(clr)
+library(tidyverse) #used for data science. The eight core packages inside this library are: ggplot2 (data visualisation), dplyr (data manipulation), tidyr, readr, purrr, tibble, stringr, and forcats
+library(KODAMA) # to use the normalisation function
+library(ggrepel) #mainly used to repel overlapping text labels in ggplots
+library(vegan) #popular library for analysing ecological diversity and for multivariate analysis of community data. Here, we use it for PCoA
+library(svglite) #to save the plots in support vector graphics (svg) format
+library(factoextra) #for extracting and visualizing outputs of multivariate analyses such as PCA, k-means
+library(ggsci) #provides color palettes for ggplot2 that can be used for scientific journals
+library(matrixStats) #contains highly optimized functions to perform statistics on matrix data
+library(cowplot) #efficient functions to arrange several plots
+library(ggpubr)
+```
+
+
+```{r}
+ft <- read.csv("mzmine_2_0929_2023_iimn_gnps_quant 1.csv", header = T, check.names = F)
+md <- read.csv("metadata_feature_average_technical_replicates_10292023.csv", header = T, check.names = F)
+```
+
+```{r}
+#Removing Peak area extensions
+colnames(ft) <- gsub(' Peak area','',colnames(ft))
+
+ft <- ft[, grepl("\\.mzML$", colnames(ft)) | 
+            colnames(ft) %in% c("row ID", "row m/z", "row retention time")]
+
+
+new_ft <- data.frame(ft, header = T, check.names = F)
+
+rownames(new_ft) <- paste(new_ft$'row ID',round(new_ft$'row m/z',digits = 3),round(new_ft$'row retention time',digits = 3), sep = '_')
+
+
+#Picking only the files with column names containing 'mzML'
+new_ft <- new_ft[,grep('mzML',colnames(new_ft))]
+```
+
+```{r}
+md <- md[, colnames(md) != ""]
+
+```
+
+
+```{r}
+quant <- t(ft)
+quant <- as.data.frame(quant)
+
+new_colnames <- as.character(quant[1, ])
+quant <- quant[-1,]
+
+colnames(quant) <- new_colnames
+
+```
+
+```{r}
+numeric_columns <- sapply(quant, is.numeric)
+numeric_columns
+
+convert_to_numeric <- function(column) {
+  as.numeric(as.character(column))
+}
+
+# Apply the function to all columns
+quant <- quant %>% mutate_all(convert_to_numeric)
+```
+
+```{r}
+quant <- quant %>% tibble::rownames_to_column("filename")
+
+quant <- quant %>% filter(filename != "row m/z") %>% filter(filename != "row retention time")
+
+quant_3<- data.frame(quant, header = T,check.names = F)
+
+quant_2 <- md %>% dplyr::select("filename", "ATTRIBUTE_Group") %>% 
+  left_join(quant, by = "filename")
+
+quant <- md %>% dplyr::select("filename", "ATTRIBUTE_Sample_Type") %>% 
+  left_join(quant, by = "filename")
+
+quant_3 <- md %>% dplyr::select("filename", "ATTRIBUTE_Group") %>% 
+  left_join(quant, by = "filename")
+
+```
+
+```{r}
+y_columns <- c("25749")
+```
+
+```{r}
+plot_list <- lapply(y_columns, function(y_var) {
+  
+  ggplot(quant, aes(ATTRIBUTE_Sample_Type, y = .data[[y_var]],
+                         group = ATTRIBUTE_Sample_Type)) +
+    geom_point(size = 3) +
+    theme_classic() + 
+    labs(y = paste("Peak area (AU) -", y_var), x = "", shape = "Date Collected") +
+    theme(
+      axis.title.x = element_text(family = "sans", size = 16, hjust = 0.5),  
+      axis.title.y = element_text(family = "sans", size = 16, hjust = 0.5),  
+      axis.text.x = element_text(family = "sans", size = 16, color = "black", angle = 45, hjust = 1), 
+      axis.text.y = element_text(family = "sans", size = 16, color = "black"),
+      axis.line = element_line(size = 1),
+      axis.ticks = element_line(size = 1), 
+      axis.ticks.length = unit(.25, "cm"),
+      legend.text = element_text(size = 14, family = "sans")
+    )   
+})
+
+# Print all plots
+plot_list
+
+
+```
+
+```{r}
+# Define a directory to save the plots
+output_dir <- "plots"
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir)
+}
+
+# Save each plot
+for (i in seq_along(plot_list)) {
+  ggsave(
+    filename = file.path(output_dir, paste0("plot_", y_columns[i], ".png")), 
+    plot = plot_list[[i]], 
+    width = 6, height = 5, dpi = 300
+  )
+}
+```
+
+
+```{r}
+# Mean
+mean_val <- mean(quant[["25749"]], na.rm = TRUE)
+
+# Standard deviation
+sd_val <- sd(quant[["25749"]], na.rm = TRUE)
+
+# Print results
+mean_val
+sd_val
+
+#Coefficent of variance 
+CV <- (sd_val/mean_val)*100
+CV
+```
+```{r}
+# Subset dataframe with just Filename and 25749
+subset_list <- quant[, c("filename", "25749")]
+
+# View it
+head(subset_list)
+```
+
+```{r}
+
+df_avg <- quant_2 %>%
+  group_by(ATTRIBUTE_Group) %>%
+  summarise(mean_25749 = mean(`25749`, na.rm = TRUE),
+    sd_25749   = sd(`25749`, na.rm = TRUE)
+            
+            )
+
+df_avg
+```
+
+```{r}
+
+
+df_avg <- md %>%
+  dplyr::select(ATTRIBUTE_Group, ATTRIBUTE_Sample_Type, ATTRIBUTE_Technical_Replicate) %>%
+  filter(ATTRIBUTE_Technical_Replicate != 2) %>%
+  left_join(df_avg, by = "ATTRIBUTE_Group")
+
+
+mean_DP <- ggplot(df_avg, aes(ATTRIBUTE_Sample_Type, y = `mean_25749`
+                         )) +
+    geom_point(size = 3) +
+    theme_classic() + 
+    labs(y = paste("Peak area (AU) - 25749"), x = "", shape = "Date Collected") +
+    theme(
+      axis.title.x = element_text(family = "sans", size = 16, hjust = 0.5),  
+      axis.title.y = element_text(family = "sans", size = 16, hjust = 0.5),  
+      axis.text.x = element_text(family = "sans", size = 16, color = "black", angle = 45, hjust = 1), 
+      axis.text.y = element_text(family = "sans", size = 16, color = "black"),
+      axis.line = element_line(size = 1),
+      axis.ticks = element_line(size = 1), 
+      axis.ticks.length = unit(.25, "cm"),
+      legend.text = element_text(size = 14, family = "sans")
+    )
+mean_DP
+```
+
+```{r}
+# Mean
+mean_val_2 <- mean(df_avg[["mean_25749"]], na.rm = TRUE)
+
+# Standard deviation
+sd_val_2 <- sd(df_avg[["mean_25749"]], na.rm = TRUE)
+
+# Print results
+mean_val
+sd_val
+
+#Coefficent of variance 
+CV2 <- (sd_val_2/mean_val_2)*100
+CV2
+```
+
+```{r}
+ggsave(
+    filename = "mean_DP.png", 
+    plot = mean_DP, 
+    width = 6, height = 5, dpi = 300
+  )
+```
+
+
+```{r}
+avg_quant <- quant_3 %>%
+  group_by(ATTRIBUTE_Group) %>%
+  summarise(
+    across(
+      .cols = -c(ATTRIBUTE_Sample_Type, filename), 
+      .fns = ~ mean(.x, na.rm = TRUE)
+    )
+  )
+
+avg_quant <- t(avg_quant)
+avg_quant <- as.data.frame(avg_quant)
+
+
+```
+
+```{r}
+colnames(avg_quant) <- as.character(unlist(avg_quant[1, ]))  # set first row as header
+avg_quant <- avg_quant[-1, ]  # remove the first row
+```
+
+```{r}
+colnames(avg_quant) <- paste0(colnames(avg_quant), ".mzML")
+```
+
+```{r}
+avg_quant[] <- lapply(avg_quant, function(x) as.numeric(as.character(x)))
+
+avg_quant$featureID <- rownames(avg_quant)
+rownames(avg_quant) <- NULL
+```
+
+```{r}
+write.csv(avg_quant, "averaged_quant_no_blank_rem_09022025.csv", row.names = TRUE)
+
+```
+
