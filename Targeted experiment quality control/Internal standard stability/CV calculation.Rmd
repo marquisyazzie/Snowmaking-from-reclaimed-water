@@ -1,0 +1,68 @@
+---
+title: "CV calculation"
+output: html_document
+date: "2025-08-15"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/Targeted analysis of SMRW and NS/SMRW_PRM_Pharma_retry_06102024/CV calculation")
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+ws <- read.csv("SMRW_PRM_06112024_transitions_for_quant.csv", header= T)
+```
+
+
+```{r}
+ws <- subset(ws, Molecule_Name == "Sulfamethizole-d4")
+
+ws <- subset(ws, Sample_Name != "Instrument_Blank")
+
+ws <- subset(ws, Sample_Name != "Other")
+
+standard_ws <-subset(ws, Sample.Type == "Standard")
+
+unknown_ws <-subset(ws, Sample.Type == "Unknown")
+
+```
+
+```{r}
+standard_TOTAL_mean<-mean(standard_ws$Total_Area, na.rm = TRUE)  # mean
+standard_TOTAL_sd <- sd(standard_ws$Total_Area, na.rm = TRUE)    # standard deviation
+```
+
+```{r}
+standard_CV <- (standard_TOTAL_sd/standard_TOTAL_mean)*100
+```
+
+
+```{r}
+unknown_TOTAL_mean<-mean(unknown_ws$Total_Area, na.rm = TRUE)  # mean
+unknown_TOTAL_sd <- sd(unknown_ws$Total_Area, na.rm = TRUE)    # standard deviation
+```
+
+```{r}
+unknown_CV <- (unknown_TOTAL_sd/unknown_TOTAL_mean)*100
+```
+
+```{r}
+CCV <- ws %>%
+  filter(Sample_Name %in% c("50ppb_calibrant", "CCV"))
+```
+
+
+```{r}
+CCV_TOTAL_mean<-mean(CCV$Total_Area, na.rm = TRUE)  # mean
+CCV_TOTAL_sd <- sd(CCV$Total_Area, na.rm = TRUE)    # standard deviation
+CCV_CV <- (CCV_TOTAL_sd/CCV_TOTAL_mean)*100
+```
+
