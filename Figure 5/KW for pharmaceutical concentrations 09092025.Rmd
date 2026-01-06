@@ -1,0 +1,53 @@
+---
+title: "KW of pharmaceutical concentrations 03132025"
+output: html_document
+date: "2025-03-13"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/Targeted analysis of SMRW and NS/SMRW_PRM_Pharma_retry_06102024/edited quant workbook 09092025")
+```
+
+
+```{r}
+conc <- read.csv("added LLOQ concentration table SMRW_ PRM 09092025.csv", header = T)
+```
+
+```{r}
+conc <- subset(conc, Snow_Type != "Extraction Blank")
+conc <- subset(conc, Molecule != "Fluconazole")
+
+
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+
+# Perform Kruskal-Wallis test for each unique molecule
+kruskal_results <- conc %>%
+  group_by(Molecule) %>%
+  summarise(
+    p_value = list(kruskal.test(Blank_subtracted_concentration ~ `Snow_Type`, data = cur_data())$p.value)
+  ) %>%
+  unnest(p_value)
+
+# Print results
+print(kruskal_results)
+```
+
+```{r}
+dunn_results <- conc %>%
+  group_by(Molecule) %>%
+  summarise(
+    dunn_test = list(FSA::dunnTest(Blank_subtracted_concentration ~ Snow_Type, data = cur_data(), method = "bonferroni")$res)
+  ) %>%
+  unnest(dunn_test)  # Unnest results for easy viewing
+
+print(dunn_results)
+```
+
