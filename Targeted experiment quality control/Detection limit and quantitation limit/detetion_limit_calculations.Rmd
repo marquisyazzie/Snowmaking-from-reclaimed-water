@@ -1,0 +1,202 @@
+---
+title: "Detection_limit_Snowbowl"
+output: html_document
+date: "2025-08-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/Targeted analysis of SMRW and NS/08142025_detection_limit_propogation")
+```
+
+```{r}
+PA_2 <-read.csv("SMRW_Pharmaceutical_PRM_sulfamethizole_05312024.csv", header =T)
+
+PA_1 <- read.csv("SMRW_Pharmaceutical_PRM_study_05182024.csv", header =T)
+
+PA_3 <- read.csv("SMRW_Pharma_PRM_Sulfa_06102024_retry_PA.csv", header =T)
+
+PA_4 <- read.csv("QC_fix_SMRW_PRM_06122024.csv", header =T)
+```
+
+```{r}
+PA_1 <- PA_1 %>%
+  mutate(experiment = 1)
+
+PA_2 <- PA_2 %>%
+  mutate(experiment = 2)
+
+PA_3 <- PA_3 %>%
+  mutate(experiment = 3)
+
+PA_4 <- PA_4 %>%
+  mutate(experiment = 4)
+```
+
+```{r}
+df_list <- list(PA_1, PA_2, PA_3, PA_4)
+
+df_list <- lapply(df_list, function(x) {
+  x$Total_Area[x$Total_Area == "#N/A"] <- 0.01
+  x
+})
+
+PA_1 <- df_list[[1]]
+PA_2 <- df_list[[2]]
+PA_3 <- df_list[[3]]
+PA_4 <- df_list[[4]]
+```
+
+```{r}
+df_list <- list(PA_1, PA_2, PA_3, PA_4)
+
+df_list <- lapply(df_list, function(x) {
+  x$Total_Area <- as.numeric(x$Total_Area)  # Converts to numeric, non-numeric become NA
+  x
+})
+
+PA_1 <- df_list[[1]]
+PA_2 <- df_list[[2]]
+PA_3 <- df_list[[3]]
+PA_4 <- df_list[[4]]
+```
+
+```{r}
+df_combined <- bind_rows(PA_1, PA_2, PA_3, PA_4)
+```
+
+```{r}
+df_list2 <- split(df_combined, df_combined$Molecule)
+
+# Access each molecule's dataframe
+carbamazepine_df <- df_list2$Carbamazepine
+fexofenadine_df  <- df_list2$Fexofenadine
+flecainide_df     <- df_list2$Flecainide
+fluconazole_df          <- df_list2$Fluconazole
+Lamotrigine_df          <- df_list2$Lamotrigine
+Sulfadimethizole_df          <- df_list2$`Sulfamethizole-d4`
+```
+
+```{r}
+frequnecy <- carbamazepine_df %>%
+  count(Sample_Type)
+```
+
+```{r}
+library(ggplot2)
+
+
+# Put your dataframes in a named list
+df_list3 <- list(
+  carbamazepine_df = carbamazepine_df,
+  fexofenadine_df = fexofenadine_df,
+  flecainide_df = flecainide_df,
+  fluconazole_df = fluconazole_df,
+  Lamotrigine_df = Lamotrigine_df,
+  Sulfadimethizole_df=Sulfadimethizole_df
+)
+
+# Loop and plot
+for (name in names(df_list3)) {
+  p <- ggplot(df_list3[[name]], aes(x = Sample_Type, y = Total_Area, color = factor(experiment))) +
+    geom_point(size = 3) +
+    theme_classic() +
+    labs(
+      title = paste("Scatter Plot -", name),
+      x = "Sample Type",
+      y = "Total Area",
+      color = "Experiment"
+    )
+  
+  print(p)
+}
+```
+
+The Experiment 2 peak areas do not look great. They will be emitted from the dataset
+
+```{r}
+df_combined <- subset(df_combined, experiment != 2)
+```
+
+```{r}
+summary_stats <- df_combined %>%
+  group_by(Molecule, Sample_Type) %>%
+  summarise(
+    mean_Total_Area = mean(Total_Area, na.rm = TRUE),
+    sd_Total_Area   = sd(Total_Area, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+summary_stats
+```
+
+```{r}
+sulfamethizole_area <- summary_stats %>%
+  filter(Molecule == "Sulfamethizole-d4") %>%
+  select(Sample_Type, sulfamethizole_area = mean_Total_Area)
+```
+
+```{r}
+summary_stats <- summary_stats %>%
+  left_join(sulfamethizole_area, by = "Sample_Type") %>%
+  mutate(ratio_to_sulfamethizole = mean_Total_Area / sulfamethizole_area) 
+
+##%>%
+  select(-sulfamethizole_area)  # optional: remove helper column
+```
+
+```{r}
+sulfamethizole_sd_area <- summary_stats %>%
+  filter(Molecule == "Sulfamethizole-d4") %>%
+  select(Sample_Type, sulfamethizole_sd_area = sd_Total_Area)
+```
+
+```{r}
+summary_stats <- summary_stats %>%
+  left_join(sulfamethizole_sd_area, by = "Sample_Type") %>%
+  mutate(sd_ratio_to_sulfamethizole = sd_Total_Area / sulfamethizole_area) %>%
+  select(-sulfamethizole_sd_area)  # optional: remove helper column
+```
+
+```{r}
+slope_intecept <- read.csv("Slope_Intercept.csv", header=T)
+```
+
+```{r}
+summary_stats <- subset(summary_stats, Molecule != "Sulfamethizole-d4")
+```
+
+```{r}
+summary_stats <- left_join(summary_stats, slope_intecept, by = "Molecule")
+
+```
+
+```{r}
+summary_stats <- summary_stats %>%
+  mutate(mean_concentration = (ratio_to_sulfamethizole - Intercept) / Slope)
+```
+
+```{r}
+summary_stats <- summary_stats %>%
+  mutate(sd_concentration = (sd_ratio_to_sulfamethizole - Intercept) / Slope)
+```
+
+```{r}
+summary_stats <- summary_stats %>%
+  mutate(sd_conc_times_3 = sd_concentration * 3)
+```
+
+```{r}
+summary_stats <- summary_stats %>%
+  mutate(sd_conc_times_10 = sd_concentration * 10)
+```
+
+
+
