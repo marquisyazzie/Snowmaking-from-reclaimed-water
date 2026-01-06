@@ -1,0 +1,234 @@
+---
+title: "combined_box_plot_10162024"
+output: html_document
+date: "2024-10-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/Aron_Lab_Data/SMRW_vs_NS_project/Kruskal_wallis_with_Normalized_Peak_area_annotations/negative_KW_03062025_no_norm")
+```
+
+
+```{r}
+library(ggplot2)
+library(stringr)
+library(data.table)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(reshape)     
+library(gplots)
+library(pheatmap)
+library(heatmap3)
+library(magrittr) 
+library(tibble) 
+library(RColorBrewer)
+library(paletteer)
+library(clr)
+library(tidyverse) #used for data science. The eight core packages inside this library are: ggplot2 (data visualisation), dplyr (data manipulation), tidyr, readr, purrr, tibble, stringr, and forcats
+library(KODAMA) # to use the normalisation function
+library(ggrepel) #mainly used to repel overlapping text labels in ggplots
+library(vegan) #popular library for analysing ecological diversity and for multivariate analysis of community data. Here, we use it for PCoA
+library(svglite) #to save the plots in support vector graphics (svg) format
+library(factoextra) #for extracting and visualizing outputs of multivariate analyses such as PCA, k-means
+library(ggsci) #provides color palettes for ggplot2 that can be used for scientific journals
+library(matrixStats) #contains highly optimized functions to perform statistics on matrix data
+library(cowplot) #efficient functions to arrange several plots
+library(ggpubr)
+
+```
+
+
+## Load in Data
+
+### Normalized quant file
+
+```{r}
+quant <- read.csv("mzmine_2_1016_2023_neg_Imputed_QuantTable.csv", header=T, check.names=F)
+
+```
+
+### Metadata
+
+```{r}
+md <- read.csv("metadata_neg_mode_10162023_SMRW_vs_NS.csv", header = T, check.names = F, sep = ',')
+```
+
+## Cleanup code
+```{r}
+names(quant)[1] <- "raw_feature"
+
+quant <- quant %>%
+  separate(col = 1, into = c("featureID", "mz", "retention_time"), sep = "_") %>%
+  mutate(
+    featureID = as.integer(featureID),
+    mz = as.numeric(mz),
+    retention_time = as.numeric(retention_time)
+  )
+```
+
+
+
+### Transpose the quant table
+
+```{r}
+quant <- t(quant)
+quant <- as.data.frame(quant)
+
+new_colnames <- as.character(quant[1, ])
+quant <- quant[-1,]
+
+colnames(quant) <- new_colnames
+
+```
+
+```{r}
+numeric_columns <- sapply(quant, is.numeric)
+numeric_columns
+
+convert_to_numeric <- function(column) {
+  as.numeric(as.character(column))
+}
+
+# Apply the function to all columns
+quant <- quant %>% mutate_all(convert_to_numeric)
+```
+
+```{r}
+quant <- quant %>% tibble::rownames_to_column("filename")
+
+quant$filename <- gsub(" Peak height", "", quant$filename)
+
+md <- md %>% filter(ATTRIBUTE_Sample_Type != "Pooled_QC")
+md <- md %>% filter(ATTRIBUTE_Sample_Type != "Ext_Blank")
+
+quant <- quant %>% filter(filename != "pooled_QC_1.mzML") %>% filter(filename != "Mass") %>% filter(filename != "Retention_time")
+```
+
+### Merge feature table and metadata for plotting
+
+```{r}
+data_merge <- md %>% dplyr::select("filename", "ATTRIBUTE_Sample_Type") %>% 
+  left_join(quant, by = "filename")
+
+data_merge <- md %>% dplyr::select("filename", "ATTRIBUTE_Date_Collected") %>% 
+  left_join(data_merge, by = "filename")
+```
+
+### Set level to plot
+
+```{r}
+data_merge$ATTRIBUTE_Sample_Type <- factor(data_merge$ATTRIBUTE_Sample_Type, levels = c("Natural Snowfall", "Low Snowmaking","High Snowmaking"))
+```
+
+```{r}
+y_columns <- c("7242", "39012","22501","11300","22186","11786","12440","13047", "5925", "13237","12415","6102","16526","14593","25698","14278","13389","7021", "5075", "17305","17046")
+```
+
+```{r}
+plot_list <- lapply(y_columns, function(y_var) {
+  
+  ggplot(data_merge, aes(x = ATTRIBUTE_Sample_Type, y = .data[[y_var]], 
+                         color = ATTRIBUTE_Sample_Type,  
+                         shape = ATTRIBUTE_Date_Collected,  
+                         group = ATTRIBUTE_Sample_Type)) +
+    geom_line(linetype = "dashed") +
+    geom_point(size = 4) +
+    stat_compare_means(method = "kruskal.test", 
+                       label.y = max(data_merge[[y_var]], na.rm = TRUE) * 1.1, 
+                       aes(label = paste("p =", ..p.format..))) +  
+    
+    # Define manual colors for sample types
+    scale_color_manual(name = "Sample Type", values = c("#619CFF", "#00BA38", "#F8766D")) +  
+    
+    # Ensure shape legend for dates
+    scale_shape_manual(name = "Date Collected", values = c(15, 16, 17, 18, 19)) + 
+    
+    theme_classic() + 
+    labs(y = paste("Normalized Peak Area -", y_var), x = "Sample Type") +
+    
+    theme(
+      axis.title.x = element_text(family = "sans", size = 12, hjust = 0.5),  
+      axis.title.y = element_text(family = "sans", size = 12, hjust = 0.5),  
+      axis.text.x = element_text(family = "sans", size = 12, color = "black", 
+                                 angle = 45, hjust = 1), 
+      axis.text.y = element_text(family = "sans", size = 12, color = "black"),
+      axis.line = element_line(size = 1),
+      axis.ticks = element_line(size = 1), 
+      axis.ticks.length = unit(.25, "cm"),
+      legend.text = element_text(size = 12, family = "sans"),
+      legend.title = element_text(size = 12, family = "sans"),
+      legend.position = "bottom",  
+      
+      # **Increase margin space**
+      plot.margin = margin(t = 20, r = 20, b = 40, l = 40, unit = "pt")  
+    )
+})
+
+
+# Print all plots
+plot_list
+```
+
+```{r}
+# Define a directory to save the plots
+output_dir <- "plots"
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir)
+}
+
+# Save each plot
+for (i in seq_along(plot_list)) {
+  ggsave(
+    filename = file.path(output_dir, paste0("plot_", y_columns[i], ".svg")), 
+    plot = plot_list[[i]], 
+    width = 4, height = 5, dpi = 300
+  )
+}
+```
+
+```{r}
+library(FSA)   # For Dunn's test
+library(dplyr) # For data manipulation
+
+# Initialize empty list to store results
+dunn_results_list <- list()
+
+# Run Kruskal-Wallis and Dunn's post hoc test for each y-variable
+for (y_var in y_columns) {
+  
+  # Check if the variable exists and has non-NA values
+  if (!y_var %in% names(data_merge) || all(is.na(data_merge[[y_var]]))) {
+    next  # Skip this variable if missing or all values are NA
+  }
+  
+  # Perform Kruskal-Wallis test
+  kw_test <- kruskal.test(data_merge[[y_var]] ~ data_merge$ATTRIBUTE_Sample_Type)
+  
+  # If Kruskal-Wallis p-value is significant (p < 0.05), perform Dunn's test
+  if (kw_test$p.value < 0.05) {
+    dunn_test <- dunnTest(data_merge[[y_var]] ~ data_merge$ATTRIBUTE_Sample_Type, method = "bh")
+    
+    # Convert Dunn's test result to dataframe
+    dunn_df <- as.data.frame(dunn_test$res) %>%
+      select(Comparison = 1, P_value = 4) %>%  # Use column index instead of names
+      mutate(y_var = y_var, Kruskal_p = kw_test$p.value)
+    
+    # Append to results list
+    dunn_results_list[[y_var]] <- dunn_df
+  }
+}
+
+# Combine all results into a single dataframe
+dunn_results_df <- bind_rows(dunn_results_list)
+
+# Print the final results
+print(dunn_results_df)
+
+write.csv(dunn_results_df,"dunn_results_df_neg.csv")
+```
+

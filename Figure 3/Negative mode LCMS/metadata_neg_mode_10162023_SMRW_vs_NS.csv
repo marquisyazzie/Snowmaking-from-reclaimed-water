@@ -1,0 +1,20 @@
+filename,ATTRIBUTE_Sample_Type,ATTRIBUTE_Date_Collected,ATTRIBUTE_Month_Collected,ATTRIBUTE_Day_Collected,ATTRIBUTE_Year_Collected,ATTRIBUTE_Technical_Replicate,ATTRIBUTE_Volume_Extracted,ATTRIBUTE_Notes
+A1.mzML,High Snowmaking,March_2022,Mar,30,2022,1,1_L,No_leak
+A2.mzML,High Snowmaking,March_2022,Mar,30,2022,1,1_L,No_leak
+A3.mzML,High Snowmaking,March_2022,Mar,30,2022,1,1_L,No_leak
+A4.mzML,High Snowmaking,December_2022,Dec,23,2022,1,1_L,No_leak
+A5.mzML,High Snowmaking,December_2022,Dec,23,2022,1,1_L,No_leak
+A6.mzML,High Snowmaking,December_2022,Dec,23,2022,1,600_mL,No_leak
+A7.mzML,Low Snowmaking,April_2023,Apr,29,2023,1,1_L,Leaked
+A8.mzML,Low Snowmaking,April_2023,Apr,29,2023,1,1_L,Leaked
+A9.mzML,Low Snowmaking,April_2023,Apr,29,2023,1,1_L,No_leak
+A10.mzML,Natural Snowfall,March_2022,Mar,30,2022,1,1_L,No_leak
+A11.mzML,Natural Snowfall,March_2022,Mar,30,2022,1,1_L,Leaked
+A12.mzML,Natural Snowfall,March_2022,Mar,30,2022,1,1_L,No_leak
+A13.mzML,Natural Snowfall,April_2023,Apr,29,2023,1,1_L,No_leak
+A14.mzML,Natural Snowfall,April_2023,Apr,29,2023,1,1_L,No_leak
+A15.mzML,Natural Snowfall,April_2023,Apr,29,2023,1,1_L,No_leak
+A16.mzML,Ext_Blank,,Aug,16,2023,1,1_L,No_leak
+A17.mzML,Ext_Blank,,Aug,16,2023,1,1_L,No_leak
+A18.mzML,Ext_Blank,,Aug,16,2023,1,1_L,No_leak
+pooled_QC_1.mzML,Pooled_QC,,No_month,No_day,No_year,1,No_volume,No_leak
