@@ -1,0 +1,209 @@
+---
+title: "combined_box_plot_10162024"
+output: html_document
+date: "2024-10-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library("ggpubr")
+library("dplyr")
+library("tidyverse")
+library("readr")
+library(ggplot2)
+library(dunn.test)
+library(tidyr)
+
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/inorganic plots 10242024")
+
+setwd("C:/Users/Owner/OneDrive - University of Denver/Desktop/DU Research/SMRW project/inorganic plots 10242024")
+```
+
+```{r}
+my_data2 <- read.csv("snow only concentrations LLOQ added 03132025.csv", header=T, check.names=F)
+
+
+my_data_5 <- my_data2 %>%
+  select(-Sample_group, -Sample_acronym, -Concentration)
+
+
+
+```
+
+
+```{r}
+my_data_5$Sample_name <- factor(my_data_5$Sample_name, levels = c("Natural Snowfall", "Low Snowmaking", "High Snowmaking", "Snowbowl Holding Pond"))
+```
+
+
+KRuskal wallis and Sample types on snow and snowbowl holding pond samples
+```{r}
+y_columns <- c("Na_23", "Mg_24","P_31","K_39","V_51","Cr_52","Mn_55","Fe_56", "Co_59", "Ni_60","Cu_63","Zn_66","As_75", "Se_78","Ag_107","Cd_114","Sb_121","Ba_138", "Tl_205", "Pb_208")
+```
+
+
+```{r}
+plot_list <- lapply(y_columns, function(y_var) {
+  
+  ggplot(my_data_5, aes(x = Sample_name, y = .data[[y_var]], 
+                         color = Sample_name,  
+                         shape = `Sample date`,  
+                         group = Sample_name)) +
+    geom_line(linetype = "dashed") +
+    geom_point(size = 4) +
+    stat_compare_means(method = "kruskal.test", 
+                       label.y = max(my_data_5[[y_var]], na.rm = TRUE) * 1.1, 
+                       aes(label = paste("p =", ..p.format..))) +  
+    
+    # Define manual colors for sample types
+    scale_color_manual(name = "Sample Type", values = c("#619CFF", "#00BA38", "#F8766D", "purple")) +  
+    
+    # Ensure shape legend for dates
+    scale_shape_manual(name = "Date Collected", values = c(15, 16, 17, 18, 14)) + 
+    
+    theme_classic() + 
+    labs(y = paste("Concentration (ppb)", y_var), x = "Sample Type") +
+    
+    theme(
+      axis.title.x = element_text(family = "sans", size = 12, hjust = 0.5),  
+      axis.title.y = element_text(family = "sans", size = 12, hjust = 0.5),  
+      axis.text.x = element_text(family = "sans", size = 12, color = "black", 
+                                 angle = 45, hjust = 1), 
+      axis.text.y = element_text(family = "sans", size = 12, color = "black"),
+      axis.line = element_line(size = 1),
+      axis.ticks = element_line(size = 1), 
+      axis.ticks.length = unit(.25, "cm"),
+      legend.text = element_text(size = 12, family = "sans"),
+      legend.title = element_text(size = 12, family = "sans"),
+      legend.position = "bottom",  
+      
+      # **Increase margin space**
+      plot.margin = margin(t = 20, r = 20, b = 40, l = 40, unit = "pt")  
+    )
+})
+
+
+# Print all plots
+plot_list
+
+lapply(seq_along(plot_list), function(i) {
+  # Define the filename for each plot (e.g., based on the y_var)
+  filename <- paste0("plot_", y_columns[i], ".svg")
+  
+  # Save the plot as an SVG
+  ggsave(filename, plot = plot_list[[i]], device = "svg", width = 4, height = 5)
+})
+```
+
+
+```{r}
+y_columns <- c("Na_23", "Mg_24","P_31","K_39","V_51","Cr_52","Mn_55","Fe_56", "Ni_60","Cu_63","Zn_66","As_75","Ba_138", "Pb_208")
+```
+
+
+
+```{r}
+# Install package if not already installed
+if (!requireNamespace("dunn.test", quietly = TRUE)) install.packages("dunn.test")
+library(dunn.test)
+
+# Perform Dunn's test for each y_var
+dunn_results <- lapply(y_columns, function(y_var) {
+  # Run Dunn's test
+  dunn_res <- dunn.test(x = my_data_5[[y_var]], g = my_data_5$Sample_name, method = "bonferroni")
+  
+  # Extract pairwise comparisons results
+  dunn_df <- as.data.frame(dunn_res$comparisons)
+  
+  # Extract p-values from the dunn test results
+  p_values <- dunn_res$P.adjusted  # Extract adjusted p-values
+  
+  # Add p-values to the dataframe
+  dunn_df$p_value <- p_values
+  
+  # Add the variable name as a column
+  dunn_df$Variable <- y_var
+  
+  return(dunn_df)
+})
+
+# Combine all results into one dataframe
+dunn_results_df <- do.call(rbind, dunn_results)
+
+# Print the combined dataframe
+head(dunn_results_df)
+
+
+```
+
+
+Kruskal WAllis and Dunn's for snow samples only
+```{r}
+my_data_6 <- subset(my_data_5, Sample_name != "Snowbowl Holding Pond")
+
+# Perform Kruskal-Wallis test for each y_var
+kruskal_results <- lapply(y_columns, function(y_var) {
+  # Run Kruskal-Wallis test
+  kruskal_res <- kruskal.test(my_data_6[[y_var]] ~ my_data_6$Sample_name)
+  
+  # Extract the test statistic and p-value
+  kruskal_df <- data.frame(
+    Variable = y_var,
+    Kruskal_Wallis_Statistic = kruskal_res$statistic,
+    p_value = kruskal_res$p.value
+  )
+  
+  return(kruskal_df)
+})
+
+# Combine all results into one dataframe
+kruskal_results_df <- do.call(rbind, kruskal_results)
+
+# Print the combined dataframe
+head(kruskal_results_df)
+```
+
+
+```{r}
+y_columns <- c("Na_23", "Mg_24","P_31","K_39","Cr_52","Mn_55","Fe_56", "Ni_60","Cu_63","Zn_66","As_75","Ba_138", "Pb_208")
+```
+
+
+
+```{r}
+library(dunn.test)
+
+# Perform Dunn's test for each y_var
+dunn_results <- lapply(y_columns, function(y_var) {
+  # Run Dunn's test
+  dunn_res <- dunn.test(x = my_data_6[[y_var]], g = my_data_6$Sample_name, method = "bonferroni")
+  
+  # Extract pairwise comparisons results
+  dunn_df <- as.data.frame(dunn_res$comparisons)
+  
+  # Extract p-values from the dunn test results
+  p_values <- dunn_res$P.adjusted  # Extract adjusted p-values
+  
+  # Add p-values to the dataframe
+  dunn_df$p_value <- p_values
+  
+  # Add the variable name as a column
+  dunn_df$Variable <- y_var
+  
+  return(dunn_df)
+})
+
+# Combine all results into one dataframe
+dunn_results_df <- do.call(rbind, dunn_results)
+
+# Print the combined dataframe
+head(dunn_results_df)
+```
+

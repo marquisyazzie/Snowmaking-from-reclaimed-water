@@ -1,0 +1,41 @@
+Sample_name,Sample_group,Sample_acronym ,Sample date ,Concentration ,Na_23,Mg_24,P_31,K_39,V_51,Cr_52,Mn_55,Fe_56,Co_59,Ni_60,Cu_63,Zn_66,As_75,Se_78,Ag_107,Cd_114,Sb_121,Ba_138,Tl_205,Pb_208
+Natural Snowfall,Natural_Snowfall,NS1,February_2023,ng/mL,141.281,111.736,11.181,500,1,1,10,23.858,1,1,10,19.878,1,1,1,1,1,2.404,1,1
+Natural Snowfall,Natural_Snowfall,NS1,February_2023,ng/mL,136.826,128.629,12.086,500,1,1,10,26.647,1,1,10,21.733,1,1,1,1,1,2.563,1,1
+Natural Snowfall,Natural_Snowfall,NS1,February_2023,ng/mL,168.322,152.73,31.213,500,1,1,10,23.619,1,1,93.764,21.989,1,1,1,1,1,2.761,1,1
+Natural Snowfall,Natural_Snowfall,NS1,February_2023,ng/mL,227.78,182.726,17.594,500,1,1,10,51.29,1,1,10,23.459,1,1,1,1,1,4.456,1,1.206
+Natural Snowfall,Natural_Snowfall,NS1,February_2023,ng/mL,409.673,433.155,142.555,500,1,1,28.978,304.627,1,1,10,27.492,1,1,1,1,1,36.935,1,2.006
+Natural Snowfall,Natural_Snowfall,NS1,February_2023,ng/mL,1115.379,349.544,602.699,1072.258,1,1,13.571,190.101,1,1.686,10,10,1,1,1,1,1,15.755,1,2.12
+Natural Snowfall,Natural_Snowfall,NS4,December_2022,ng/mL,191.164,219.018,28.624,500,1,1,10.677,143.921,1,1,10,25.415,1,1,1,1,1,5.653,1,1
+Natural Snowfall,Natural_Snowfall,NS4,December_2022,ng/mL,204.353,237.828,26.106,500,1,1,10.722,123.245,1,1,10,23.364,1,1,1,1,1,5.645,1,1
+Natural Snowfall,Natural_Snowfall,NS5,March_2022,ng/mL,175.355,238.388,10,500,1,1,10,10,1,1,10,31.234,1,1,1,1,1,2.873,1,1
+Natural Snowfall,Natural_Snowfall,NS5,March_2022,ng/mL,112.757,139.394,18.621,500,1,1,10,17.795,1,2.178,12.596,33.619,1,1,1,1,1,7.319,1,1
+Natural Snowfall,Natural_Snowfall,NS6,April_2023,ng/mL,224.014,195.271,24.653,500,1,1,10.961,9.51,1,1,10,21.661,1,1,1,1,1,6.518,1,1
+Natural Snowfall,Natural_Snowfall,NS6,April_2023,ng/mL,258.017,166.789,24.333,500,1,1,10,14.522,1,1,10,30.249,1,1,1,1,1,5.594,1,1
+Natural Snowfall,Natural_Snowfall,NS6,April_2023,ng/mL,180.916,169.989,24.078,500,1,1,10,10.667,1,1,10,32.872,1,1,1,1,1,4.197,1,1
+Natural Snowfall,Natural_Snowfall,NS6,April_2023,ng/mL,387.453,205.128,29.067,500,1,1,11.18,31.259,1,1,10,37.342,1,1,1,1,1,18.44,1,1
+Natural Snowfall,Natural_Snowfall,NS6,April_2023,ng/mL,550.175,239.011,34.226,500,1,1,10,16.902,1,1,10,44.563,1,1,1,1,1,5.249,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,140.523,150.706,10,500,1,1,10,18.02,1,1,10,18.215,1,1,1,1,1,1.332,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,145.578,106.202,12.272,500,1,1,10,40.767,1,1,10,26.011,1,1,1,1,1,2.225,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,330.481,127.639,15.162,500,1,1,10,44.124,1,1,10,20.148,1,1,1,1,1,3.431,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,1132.843,183.994,22.292,500,1,1,10,84.671,1,1,10,28.191,1,1,1,1,1,5.563,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,295.475,177.725,23.484,500,1,1,10,47.481,1,1,10,21.909,1,1,1,1,1,4.439,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,1558.313,461.105,23.653,500,1,1,10,30.217,1,1,10,22.56,1,1,1,1,1,5.515,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,614.808,246.197,18.647,500,1,1,10,40.331,1,1,39.715,21.777,1,1,1,1,1,5.629,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,758.22,288.096,25.455,500,1,1,10,44.131,1,1,21.993,23.038,1,1,1,1,1,5.71,1,1
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,9051.534,2532.07,144.869,1729.662,1,1,7.968,93.548,1,1,10,30.586,1,1,1,1,1,45.035,1,1.141
+Low Snowmaking,Low_Snowmaking_Feb_2023,RS1,February_2023,ng/mL,1723.826,843.541,163.568,598.375,1,1,30.965,327.378,1,1,10,48.373,1,1,1,1,1,36.961,1,1.278
+High Snowmaking,High_Snowmaking_Dec_2022,RS6,December_2022,ng/mL,24932.577,6607.528,1324.891,4236.001,1,1,18.597,80.199,1,1,10,38.031,1.231,1,1,1,1,219.757,1,1
+High Snowmaking,High_Snowmaking_Dec_2022,RS6,December_2022,ng/mL,23965.599,6197.168,1335.933,4034.128,1,1.283,18.546,170.362,1,1,10,39.065,1.215,1,1,1,1,215.802,1,1
+High Snowmaking,High_Snowmaking_Mar_2022,RS7,March_2022,ng/mL,379.635,100,96.73,500,1,1,28.729,147.074,1,1,10,63.92,1,1,1,1,1,527.686,1,1
+High Snowmaking,High_Snowmaking_Mar_2022,RS7,March_2022,ng/mL,402.806,262.523,167.022,500,1,1,48.056,275.309,1,1,10,117.748,1,1,1,1,1,700.569,1,2.186
+High Snowmaking,High_Snowmaking_Mar_2022,RS7,March_2022,ng/mL,513.267,645.445,458.019,625.792,1,1.078,91.255,513.921,1,1,10,267.773,1,1,1,1,1,1535.964,1,7.053
+Low Snowmaking,Low_Snowmaking_Apr_2023,RS8,April_2023,ng/mL,1143.689,239.576,21.828,500,1,1,10,63.21,1,1,10,52.1,1,1,1,1,1,148.248,1,1
+Low Snowmaking,Low_Snowmaking_Apr_2023,RS8,April_2023,ng/mL,1229.384,205.733,28.759,500,1,1,10,48.437,1,1,10,49.365,1,1,1,1,1,145.067,1,1
+Low Snowmaking,Low_Snowmaking_Apr_2023,RS8,April_2023,ng/mL,789.082,254.28,12.046,500,1,1,10,12.362,1,1,10,32.031,1,1,1,1,1,3.832,1,1
+Low Snowmaking,Low_Snowmaking_Apr_2023,RS8,April_2023,ng/mL,581.447,135.556,13.77,500,1,1,10,56.717,1,1.756,10,39.645,1,1,1,1,1,9.274,1,1
+Low Snowmaking,Low_Snowmaking_Apr_2023,RS8,April_2023,ng/mL,902.825,169.729,23.007,653.465,1,1,10,31.215,1,1,10,63.268,1,1,1,1,1,18.255,1,1
+Snowbowl Holding Pond,Snowbowl_Holding_Pond_Dec_2022,SBHP1,December_2022,ng/mL,92650.823,22046.196,1964.731,15837.478,1.165,1.048,32.276,466.75,1,1.718,20.731,139.775,3.834,1,1,1,1,450.729,1,1
+Snowbowl Holding Pond,Snowbowl_Holding_Pond_Dec_2022,SBHP1,December_2022,ng/mL,89174.719,20531.781,2046.001,14156.565,1.106,1.106,32.781,364.358,1,1.747,20.43,162.526,3.863,1,1,1,1,467.922,1,1
+Snowbowl Holding Pond,Snowbowl_Holding_Pond_Oct_2022,SBHP2,October_2022,ng/mL,77455.266,23586.379,602.436,13730.866,1,1,21.064,35.158,1,1,10,32.951,3.137,1,1,1,1,492.165,1,1
+Snowbowl Holding Pond,Snowbowl_Holding_Pond_Oct_2022,SBHP2,October_2022,ng/mL,75268.418,23246.286,565.009,12941.834,1,1,26.595,54.956,1,1,10,40.662,3.189,1,1,1,1,492.262,1,1
+Snowbowl Holding Pond,Snowbowl_Holding_Pond_Oct_2022,SBHP2,October_2022,ng/mL,65609.102,20231.702,579.824,10547.399,1,1,25.922,73.651,1,1.197,14.449,44.643,3.275,1,1,1,1,521.684,1,1
