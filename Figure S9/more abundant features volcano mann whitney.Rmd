@@ -1,0 +1,72 @@
+---
+title: "more abundant features SMRW 11192024"
+output: html_document
+date: "2024-11-19"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/abundant propogated structures SMRW")
+```
+
+
+```{r}
+dset<-read.csv("All_SMRW_vs_NS_volcano_plot_MAnn_whitney_09222025.csv", header = TRUE)
+
+summary<-read.csv("canopus_compound_summary.csv", header = TRUE)
+```
+
+```{r}
+dset1<- subset(dset, Sample_Type == "Significant in SMRW")
+```
+
+```{r}
+merged_df <- merge(dset1, summary, by.x = "featureIDs", by.y = "featureId", all.x = TRUE)
+
+```
+
+```{r}
+num_unique_values <- length(unique(merged_df$NPC.class))
+num_unique_values <- length(unique(merged_df$NPC.class))
+
+
+id_frequencies <- table(merged_df$NPC.class)
+print(id_frequencies)
+id_frequencies_df <- as.data.frame(id_frequencies)
+colnames(id_frequencies_df) <- c("NPC.class", "Frequency")
+
+id_frequencies_pathway <-table(merged_df$NPC.pathway)
+print(id_frequencies_pathway)
+id_frequencies_pathway_df <- as.data.frame(id_frequencies_pathway)
+colnames(id_frequencies_pathway_df) <- c("NPC.pathway", "Frequency")
+
+
+id_frequencies_superclass <-table(merged_df$NPC.superclass)
+print(id_frequencies_superclass)
+id_frequencies_superclass_df <- as.data.frame(id_frequencies_superclass)
+colnames(id_frequencies_superclass_df) <- c("NPC.superclass", "Frequency")
+
+sum(merged_df$NPC.superclass != "N/A", na.rm = TRUE)
+
+```
+
+
+```{r}
+
+superclass_histogram <- ggplot(id_frequencies_superclass_df, 
+       aes(x = reorder(NPC.superclass, -Frequency), y = Frequency)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(x = "Superclass", y = "Frequency") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+plot(superclass_histogram)
+
+ggsave(file="superclass histogram MannWhitney 09222025.svg", plot=superclass_histogram, width=7, height=5)
+
+
+```
+
