@@ -1,0 +1,17 @@
+Sample_name,Sample_type,Sample_date,Concentration_ng_L,Molecule
+Natural Snowfall,Snow,12_23_2022,0.59256,Carbamazepine
+Natural Snowfall,Snow,12_23_2022,0.643064,Carbamazepine
+Before_chlorination,Reclaimed_Water,1_6_2023,38.0856,Carbamazepine
+Before_chlorination,Reclaimed_Water,1_6_2023,47.6712,Carbamazepine
+After_chlorination,Reclaimed_Water,1_6_2023,46.1832,Carbamazepine
+After_chlorination,Reclaimed_Water,1_6_2023,44.5976,Carbamazepine
+Buffalo_Park,Reclaimed_Water,1_6_2023,30.6168,Carbamazepine
+Buffalo_Park,Reclaimed_Water,1_6_2023,30.1256,Carbamazepine
+Snowbowl Holding Pond,Reclaimed_Water,12_23_2022,19.02,Carbamazepine
+Snowbowl Holding Pond,Reclaimed_Water,12_23_2022,14.8384,Carbamazepine
+Snow made from reclaimed water,Snow,12_23_2022,4.28136,Carbamazepine
+Snow made from reclaimed water,Snow,12_23_2022,3.57096,Carbamazepine
+SBHP blank ,Blank,1_6_2023,0,Carbamazepine
+RDF blank ,Blank,1_6_2023,0,Carbamazepine
+BP blank ,Blank,1_6_2023,0,Carbamazepine
+Snow blank,Blank,12_23_2022,0,Carbamazepine

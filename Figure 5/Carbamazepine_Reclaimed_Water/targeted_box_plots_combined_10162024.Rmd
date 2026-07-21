@@ -1,0 +1,89 @@
+---
+title: "combined_box_plot_10162024"
+output: html_document
+date: "2024-10-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library("ggpubr")
+library("dplyr")
+library("tidyverse")
+library("readr")
+library(ggplot2)
+library(dunn.test)
+
+```
+
+```{r}
+setwd("C:/Users/Marquis.Yazzie/OneDrive - University of Denver/Desktop/DU Research/SMRW project/Targeted analysis of SMRW and NS/SMRW_PRM_Pharma_retry_06102024")
+```
+
+```{r}
+my_data2 <- read.csv("carbamazepine_Dec_concentrations.csv", header=T, check.names=F)
+
+
+```
+
+
+```{r}
+my_data2 <-filter(my_data2, Sample_type!=  "Blank")
+my_data2 <-filter(my_data2, Sample_name!=  "Before_chlorination")
+my_data2 <-filter(my_data2, Sample_name!=  "After_chlorination")
+my_data2 <-filter(my_data2, Sample_name!=  "Buffalo_Park")
+
+
+```
+
+
+```{r}
+my_data2$Sample_name <- factor(my_data2$Sample_name,
+                               levels = c("Natural Snowfall", "Snow made from reclaimed water", "Snowbowl Holding Pond"))
+```
+
+
+
+```{r}
+carbamazepine <- ggplot(my_data2, aes(x = Sample_name, 
+                                      y = Concentration_ng_L,
+                                      color = Sample_name,
+                                      shape = Sample_type,
+                                      group = Sample_name)) +
+  geom_line(linetype = "dashed") +
+  geom_point(size = 4) +
+
+  # Manual colors
+  scale_color_manual(name = "Sample Type",
+                     values = c("#619CFF", "#F8766D", "purple")) +
+
+  theme_classic() +
+  labs(y = "Concentration (ng/L)", x = "Sample Type") +
+
+  theme(
+    axis.title.x = element_text(family = "sans", size = 12, hjust = 0.5),
+    axis.title.y = element_text(family = "sans", size = 12, hjust = 0.5),
+    axis.text.x = element_text(family = "sans", size = 12, color = "black",
+                               angle = 45, hjust = 1),
+    axis.text.y = element_text(family = "sans", size = 12, color = "black"),
+    axis.line = element_line(size = 1),
+    axis.ticks = element_line(size = 1),
+    axis.ticks.length = unit(.25, "cm"),
+    legend.text = element_text(size = 12, family = "sans"),
+    legend.title = element_text(size = 12, family = "sans"),
+    legend.position = "bottom",
+    plot.margin = margin(t = 20, r = 20, b = 40, l = 40, unit = "pt")
+  )
+
+carbamazepine
+
+ggsave("carbamazepine_plot.svg",
+       plot = carbamazepine,
+       width = 5,
+       height = 6,
+       dpi = 300)
+```
+

@@ -1,0 +1,50 @@
+---
+title: "KW of pharmaceutical concentrations 03132025"
+output: html_document
+date: "2025-03-13"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+conc <- read.csv("carbamazepine_Dec_concentrations.csv", header = T)
+```
+
+```{r}
+conc <- subset(conc, Sample_type != "Blank")
+conc <-filter(conc, Sample_name!=  "Before_chlorination")
+conc <-filter(conc, Sample_name!=  "After_chlorination")
+conc <-filter(conc, Sample_name!=  "Buffalo_Park")
+
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+
+# Perform Kruskal-Wallis test for each unique molecule
+kruskal_results <- conc %>%
+  group_by(Molecule) %>%
+  summarise(
+    p_value = list(kruskal.test(Concentration_ng_L ~ `Snow_Type`, data = cur_data())$p.value)
+  ) %>%
+  unnest(p_value)
+
+# Print results
+print(kruskal_results)
+```
+
+```{r}
+dunn_results <- conc %>%
+  group_by(Molecule) %>%
+  summarise(
+    dunn_test = list(FSA::dunnTest(Concentration_ng_L ~ Snow_Type, data = cur_data(), method = "bonferroni")$res)
+  ) %>%
+  unnest(dunn_test)  # Unnest results for easy viewing
+
+print(dunn_results)
+```
+
